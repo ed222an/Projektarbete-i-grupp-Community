@@ -370,7 +370,7 @@ function wp_registration_url() {
 	 *
 	 * @param string $register The user registration URL.
 	 */
-	return apply_filters( 'register_url', site_url( 'wp-login.php?action=register', 'login' ) );
+	return apply_filters( 'register_url', site_url( '?page_id=15', 'login' ) );
 }
 
 /**

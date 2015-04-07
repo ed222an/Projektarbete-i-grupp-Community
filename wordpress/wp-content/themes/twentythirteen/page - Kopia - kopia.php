@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: MyOwnCode
+Template Name: EmptyPage
 */
 ?>
 <?php
@@ -20,49 +20,19 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<h1>Highscores</h1>
+
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<?php 	
 			
-global $wpdb;
-$result = $wpdb->get_results( "SELECT *  FROM highscore ");
 
-foreach($result as $row)
- {
-	echo $row->Highscore."  ".$row->HighscoreUsername."<br>";
- }
  
  
  
 			?>
-			<h1>Achievements</h1>
 			
-			<?php 
 			
-				global $current_user;
-					get_currentuserinfo(); 
-					//echo 'Username: ' . $current_user->user_login . "\n";
-					//echo 'User email: ' . $current_user->user_email . "\n";
-					//echo 'User first name: ' . $current_user->user_firstname . "\n";
-					//echo 'User last name: ' . $current_user->user_lastname . "\n";
-					//echo 'User display name: ' . $current_user->display_name . "\n";
-					//echo 'User ID: ' . $current_user->ID . "\n";
-			
-				
-				global $wpdb;
-				$result = $wpdb->get_results( "SELECT *  FROM achievements WHERE achievementUserID = $current_user->ID");
 
-				foreach($result as $row)
-				 {
-					 $status = "In Progress";
-					 if($row->achievementIsDone == 1){
-						 $status = "Done";
-					 }
-					echo "<b>Achivement name: " . $row->achievement."</b> <br> ". "Achivement status: " . $status."<br><br><br>";
-				 }
-			
-			?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
