@@ -997,7 +997,7 @@ ul.nav-menu .focus > ul,
 .entry-summary,
 .entry-meta {
 	margin: 0 auto;
-	
+	/*max-width: 604px;*/
 	width: 100%;
 }
 
@@ -1031,6 +1031,7 @@ ul.nav-menu .focus > ul,
 .entry-title {
 	font-weight: normal;
 	margin: 0 0 5px;
+	text-align:center;
 }
 
 .entry-title a {
@@ -1050,6 +1051,7 @@ ul.nav-menu .focus > ul,
 .entry-meta {
 	clear: both;
 	font-size: 14px;
+	text-align:center;
 }
 
 .entry-meta a {
@@ -1127,6 +1129,7 @@ ul.nav-menu .focus > ul,
 	-ms-hyphens:     auto;
 	hyphens:         auto;
 	word-wrap: break-word;
+	text-align:center;
 }
 
 .entry-content a,
