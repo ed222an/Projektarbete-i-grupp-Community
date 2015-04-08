@@ -236,7 +236,7 @@ function simplr_setup_user($atts,$data) {
 
 	$extra = __(" Please check your email for confirmation.", 'simplr-reg');
 	$extra = apply_filters('simplr_extra_message', __($extra,'simplr-reg') );
-	$confirm = '<div class="simplr-message success">' . __("Your Registration was successful.", 'simplr-reg') . $extra .'</div>';
+	$confirm = '<div class="simplr-message success">' . __("Your Registration was successful.", 'simplr-reg') . '</div>';
 
 	//Use this hook for multistage registrations
 	do_action('simplr_reg_next_action', array($data, $user_id, $confirm));
