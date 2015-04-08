@@ -1132,6 +1132,7 @@ ul.nav-menu .focus > ul,
 .entry-content a,
 .comment-content a {
 	color: #bc360a;
+	font-size:14px;
 }
 
 .entry-content a:hover,
