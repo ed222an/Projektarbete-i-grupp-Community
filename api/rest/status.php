@@ -1,31 +1,38 @@
 <?php
-
-// Include confi.php
 include_once('confi.php');
 
+//Tables
+$dbTable = "wp_stats";
+
+//Get connection string
+$conn = new connection();
+$dbh = $conn->getConnection();
+
+//Kontrollerar request metoden
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	// Hämtar data som skickats med post
-	$statName = isset($_POST['statName']) ? mysql_real_escape_string($_POST['statName']) : "";
-	$statCount = isset($_POST['statCount']) ? mysql_real_escape_string($_POST['statCount']) : "";
-	$userID = isset($_POST['userID']) ? mysql_real_escape_string($_POST['userID']) : "";
+	$statName = isset($_POST['statName']) ? $_POST['statName'] : "";
+	$statCount = isset($_POST['statCount']) ? $_POST['statCount'] : "";
+	$userID = isset($_POST['userID']) ? $_POST['userID'] : "";
 	
-	// Add your validations
-	if(!empty($userID)){
-		//$qur = mysql_query("UPDATE  `wordpress`.`wp_stats` SET  `statCount` = `statCount` + 1 WHERE  `wp_stats`.`userID` ='$userID';");
-		$qur = mysql_query("UPDATE  `wordpress`.`wp_stats` SET  `statCount` = $statCount WHERE  `wp_stats`.`userID` ='$userID';");
-		if($qur){
-			$json = array("status" => 1, "msg" => "Status updated!!.");
+//Databasanroper körs
+	if(!empty($userID)){			
+		$sql = "UPDATE $dbTable SET statCount = ? WHERE userID = ?";
+		$params = array($statCount, $userID);
+		$query = $dbh -> prepare($sql);
+		$query -> execute($params);
+		
+//Skickar tillbaka ett meddelande
+		if($query){
+			$json = array("result" => 1, "message" => "Success");
 		}else{
-			$json = array("status" => 0, "msg" => "Error updating status");
+			$json = array("result" => 0, "message" => "Error occurred when updating stats");
 		}
 	}else{
-		$json = array("status" => 0, "msg" => "User ID not defined");
+		$json = array("result" => 0, "message" => "User ID not defined");
 	}
 }else{
-		$json = array("status" => 0, "msg" => "User ID not defined");
+		$json = array("result" => 0, "message" => "User ID not defined");
 	}
-	@mysql_close($conn);
-
-	/* Output header */
+//Output to browser
 	header('Content-type: application/json');
 	echo json_encode($json);
