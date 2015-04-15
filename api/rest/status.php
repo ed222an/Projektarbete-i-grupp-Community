@@ -4,12 +4,10 @@
 include_once('confi.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-
+	// Hämtar data som skickats med post
 	$statName = isset($_POST['statName']) ? mysql_real_escape_string($_POST['statName']) : "";
 	$statCount = isset($_POST['statCount']) ? mysql_real_escape_string($_POST['statCount']) : "";
 	$userID = isset($_POST['userID']) ? mysql_real_escape_string($_POST['userID']) : "";
-	
-	//echo $status;
 	
 	// Add your validations
 	if(!empty($userID)){
@@ -21,10 +19,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 			$json = array("status" => 0, "msg" => "Error updating status");
 		}
 	}else{
-		$json = array("status" => 0, "msg" => "User ID not define");
+		$json = array("status" => 0, "msg" => "User ID not defined");
 	}
 }else{
-		$json = array("status" => 0, "msg" => "User ID not define");
+		$json = array("status" => 0, "msg" => "User ID not defined");
 	}
 	@mysql_close($conn);
 
