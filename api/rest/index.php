@@ -1,5 +1,5 @@
 <h2>API</h2>
-<form action="https://127.0.0.1/rest/rest/status.php" method="POST">
+<form action="http://127.0.0.1/rest/rest/status.php" method="POST">
     <br>Stat name
 	<input type="text" name="statName" value="kills">
 	<br>Count
