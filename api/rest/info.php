@@ -2,19 +2,38 @@
 	// Include confi.php
 	include_once('confi.php');
 	
-	$uid = isset($_GET['uid']) ? mysql_real_escape_string($_GET['uid']) :  "";
-	if(!empty($uid)){
-		$qur = mysql_query("select name, email, status from `users` where ID='$uid'");
-		$result =array();
-		while($r = mysql_fetch_array($qur)){
-			extract($r);
-			$result[] = array("name" => $name, "email" => $email, 'status' => $status); 
+	//Get database connection
+	$conn = new connection();
+	$dbh = $conn->getConnection();
+	
+	$username = isset($_GET['username']) ? $_GET['username'] :  "";
+	$statName = isset($_GET['statName']) ? $_GET['statName'] :  "";
+	
+	if(!empty($username) && !empty($statName)){
+		
+		$sql = "SELECT * FROM wp_stats WHERE username= ? AND statName= ?";
+		$params = array($username, $statName);
+		$query = $dbh -> prepare($sql);
+		$query -> execute($params);
+		$rows = $query -> fetchColumn();
+		
+		if($rows)
+		{
+			$sql = "SELECT * FROM wp_stats WHERE username= ? AND statName= ?";
+			$params = array($username, $statName);
+			$query = $dbh -> prepare($sql);
+			$query -> execute($params);
+			$result = $query -> fetch();
+
+			$json = array("status" => 1, "statName" => $result['statName'], "statCount" => $result['statCount'], "username" => $result['username']);
 		}
-		$json = array("status" => 1, "info" => $result);
+		else{
+			$json = array("status" => 0, "msg" => "Username and or statname does not exist");
+		}
+		
 	}else{
-		$json = array("status" => 0, "msg" => "User ID not define");
+		$json = array("status" => 0, "msg" => "Username and or stat name is empty");
 	}
-	@mysql_close($conn);
 
 	/* Output header */
 	header('Content-type: application/json');
