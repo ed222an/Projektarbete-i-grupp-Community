@@ -28,15 +28,38 @@ get_header(); ?>
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 					<?php 	
-					
-						global $wpdb;
-						$result = $wpdb->get_results( "SELECT *  FROM achievements ");
+					global $current_user;
+					global $wpdb;
+					get_currentuserinfo(); 
+					//echo 'Username: ' . $current_user->user_login . "\n";
+					//echo 'User email: ' . $current_user->user_email . "\n";
+					//echo 'User first name: ' . $current_user->user_firstname . "\n";
+					//echo 'User last name: ' . $current_user->user_lastname . "\n";
+					//echo 'User display name: ' . $current_user->display_name . "\n";
+					//echo 'User ID: ' . $current_user->ID . "\n";
+			
+				
+				//Kod som hämtar ut ens egna achievements och om de är avklarade eller inte
+				$result = $wpdb->get_results( "SELECT * FROM achievements WHERE achievementUserID = $current_user->ID");
 
-						foreach($result as $row)
-						 {
-							echo $row->achievement . "<br>";
+				if(empty($current_user->user_login)){
+					echo "You need to login to see your achievements!";
+					
+					//Visar ett loginformulär om ingen användare är inloggad
+					wp_login_form();
+				}
+				else{
+					//Visar achievements från databasen
+					foreach($result as $row)
+					 {
+						 $status = "In Progress";
+						 if($row->achievementIsDone == 1){
+							 $status = "Done";
 						 }
-		 
+						 echo $row->achievementCompletedDate;
+						echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . $row->achievementCompleteDate . "<br><br>";
+					 }
+				}
 					?>
 					</div>
 					</header><!-- .entry-header -->

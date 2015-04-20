@@ -23,15 +23,69 @@ get_header(); ?>
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-					<?php 	
+					<?php 
 					
-						global $wpdb;
-						$result = $wpdb->get_results( "SELECT *  FROM wp_stats ");
+					global $current_user;
+					global $wpdb;
+					get_currentuserinfo(); 
 
-						foreach($result as $row)
-						 {
-							echo $row->statName." ".$row->statCount . "<br>";
-						 }
+						$userResult = $wpdb->get_results( "SELECT * FROM wp_stats WHERE Username = '$current_user->user_login'");
+						$topResultKills = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'kills' ORDER BY statCount DESC LIMIT 10");
+						$topResultDeaths = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'deaths' ORDER BY statCount DESC LIMIT 10");
+						
+						$KillsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'kills'");
+						$DeathsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'deaths'");
+
+					if(empty($current_user->user_login)){
+						echo "You need to login to see your own stats!";
+					
+					//Visar ett loginformulär om ingen användare är inloggad
+					wp_login_form();
+					}else{
+						if(!empty($userResult)){
+							echo "<div class='statColumn'><h2>Your stats</h2><br>";
+							foreach($userResult as $row)
+							 {
+								 //Gör så att första bokstaven blir stor i statName
+								$statName = ucfirst($row->statName);
+								//Visar den inloggade användarens stats
+								echo $statName . " ".$row->statCount . "<br>";
+								
+							 }
+							 foreach($KillsKDR as $row){
+								$kills = $row->statCount;
+								foreach($DeathsKDR as $row2){
+									$deaths = $row2->statCount;
+								}
+								
+								$KDR = $kills/$deaths;
+								
+								echo "Kill/Death ratio " . $KDR;
+								echo "</div>";
+							}
+							 
+ 
+						}else{
+							echo "You need to play the game to get stats!";
+							echo "</div>";
+						}
+
+					}
+					
+							echo "<div class='statColumn'><h2>Top 10 killers</h2><br>";
+								foreach($topResultKills as $row){
+									echo $row->Username . " got " . " ".$row->statCount . " kills<br>";
+								}
+							echo "</div>";
+							
+							echo "<div class='statColumn'><h2>Top 10 most killed</h2><br>";
+								foreach($topResultDeaths as $row){
+									echo $row->Username . " have died " . " ".$row->statCount . " times<br>";
+								}
+							echo "</div>";
+							
+							echo "<h2>Top 10 highest level</h2><br>";
+							echo "<h2>Top 10 longest playtime</h2><br>";
 		 
 					?>
 					</div>
