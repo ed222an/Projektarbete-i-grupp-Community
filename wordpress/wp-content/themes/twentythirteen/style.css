@@ -91,6 +91,14 @@ audio:not([controls]) {
 	display: none;
 }
 
+.statColumn {
+	display: inline-table;
+  width: 25%;
+  background: coral;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 html {
 	font-size: 100%;
 	overflow-y: scroll;
@@ -997,7 +1005,7 @@ ul.nav-menu .focus > ul,
 .entry-summary,
 .entry-meta {
 	margin: 0 auto;
-	max-width: 600px;
+	/*max-width: 600px;*/
 	width:100%;
 	
 }
@@ -3227,3 +3235,4 @@ footer.entry-meta {
 		color: #333;
 	}
 }
+
