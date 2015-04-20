@@ -37,6 +37,7 @@ body.reply-edit .reply {
 #bbpress-forums div.reply {
 	height: auto;
 	width: 100%;
+	
 }
 
 #bbpress-forums div.bbp-forum-header,
@@ -274,6 +275,7 @@ span.bbp-author-ip {
 	margin-left: 130px;
 	padding: 12px 12px 12px 0;
 	text-align: left;
+	
 }
 
 /* Clearing hack */

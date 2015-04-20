@@ -55,11 +55,12 @@
 		<?php endif; ?>
 
 		<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
+		
 
 	</div><!-- .bbp-reply-author -->
 
 	<div class="bbp-reply-content">
-
+		
 		<?php do_action( 'bbp_theme_before_reply_content' ); ?>
 
 		<?php bbp_reply_content(); ?>
@@ -69,3 +70,4 @@
 	</div><!-- .bbp-reply-content -->
 
 </div><!-- .reply -->
+
