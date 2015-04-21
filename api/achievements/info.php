@@ -8,19 +8,20 @@
 	
 	$username = isset($_GET['username']) ? $_GET['username'] :  "";
 	$achievement = isset($_GET['achievement']) ? $_GET['achievement'] :  "";
+	$achievementIsDone = isset($_GET['achievementIsDone']) ? $_GET['achievementIsDone'] :  "";
 	
 	if(!empty($username) && !empty($achievement)){
 		
-		$sql = "SELECT * FROM achievements WHERE username= ? AND achievement= ?";
-		$params = array($username, $achievement);
+		$sql = "SELECT * FROM wp_achievements WHERE username= ? AND achievement= ? AND achievementIsDone= ?";
+		$params = array($username, $achievement, $achievementIsDone);
 		$query = $dbh -> prepare($sql);
 		$query -> execute($params);
 		$rows = $query -> fetchColumn();
 		
 		if($rows)
 		{
-			$sql = "SELECT * FROM achievements WHERE username= ? AND achievement= ?";
-			$params = array($username, $achievement);
+			$sql = "SELECT * FROM wp_achievements WHERE username= ? AND achievement= ? AND achievementIsDone= ?";
+			$params = array($username, $achievement, $achievementIsDone);
 			$query = $dbh -> prepare($sql);
 			$query -> execute($params);
 			$result = $query -> fetch();
