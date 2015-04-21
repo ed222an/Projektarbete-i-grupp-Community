@@ -97,6 +97,11 @@ audio:not([controls]) {
   background: coral;
   margin-left: auto;
   margin-right: auto;
+  margin: 1%;
+  box-shadow: 5px 5px 15px #888888;
+  border-radius: 5px;
+  border-style: outset;
+  height: 400px;
 }
 
 html {
