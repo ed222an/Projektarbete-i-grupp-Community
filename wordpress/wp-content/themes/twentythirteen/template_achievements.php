@@ -40,7 +40,7 @@ get_header(); ?>
 			
 				
 				//Kod som hämtar ut ens egna achievements och om de är avklarade eller inte
-				$result = $wpdb->get_results( "SELECT * FROM achievements WHERE achievementUserID = $current_user->ID");
+				$result = $wpdb->get_results( "SELECT * FROM achievements WHERE username = '$current_user->user_login'");
 
 				if(empty($current_user->user_login)){
 					echo "You need to login to see your achievements!";
