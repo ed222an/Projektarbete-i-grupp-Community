@@ -38,6 +38,8 @@ get_header(); ?>
 					//echo 'User display name: ' . $current_user->display_name . "\n";
 					//echo 'User ID: ' . $current_user->ID . "\n";
 			
+			
+				
 				
 				//Kod som hämtar ut ens egna achievements och om de är avklarade eller inte
 				$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$current_user->user_login'");

@@ -11,15 +11,6 @@
 	<input type="text" name="password" value="">
         <input type="submit" value="Skicka">
 </form>
-<h3>GET one achivement </h3>
-<form action="http://127.0.0.1/achievements/info.php" method="GET">
-    <br>Achievement name
-	<input type="text" name="achievementName" value="10 Kills">
-	<br>Username
-	<input type="text" name="username" value="Admin">
-
-        <input type="submit" value="Skicka">
-</form>
 
 <h3>GET all achievements on user</h3>
 <form action="http://127.0.0.1/achievements/info.php" method="GET">
@@ -27,6 +18,20 @@
 	<input type="text" name="achievementName" value="10 Kills">
 	<br>Username
 	<input type="text" name="username" value="Admin">
+	<br>Status
+	<select name="status">
+	  <option value="">Get all</option>
+	  <option value="true">Done</option>
+	  <option value="false">In progress</option>
+	</select>
+
+        <input type="submit" value="Skicka">
+</form>
+
+<h3>Test</h3>
+<form action="http://127.0.0.1/achievements/test.php" method="POST">
+    <br>Achievement name
+	<input type="text" name="achievement" value="50 Kills">
 
         <input type="submit" value="Skicka">
 </form>

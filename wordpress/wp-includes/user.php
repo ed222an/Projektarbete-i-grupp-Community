@@ -1937,6 +1937,46 @@ function wp_insert_user( $userdata ) {
 		do_action( 'user_register', $user_id );
 	}
 
+	// $wpdb->insert("INSERT INTO test_achievementisdone ('username', 'isDone', 'name')
+									// VALUES ('$user_login', 0, '10 kills')");
+							
+	//Hämtar alla achievementnamn						
+	$result = $wpdb->get_results("SELECT * FROM wp_achievementList");
+
+	//Loopar igenom alla namn och skapar en rad i databasen för varje namn som finns
+	foreach($result as $value){
+
+			$wpdb->insert( 
+				'wp_achievements', 
+				array( 
+					'username' => $user_login, 
+					'achievementIsDone' => 0,
+					'achievement' => $value->name
+				), 
+				array( 
+					'%s', 
+					'%d',
+					'%s'
+				) 
+			);
+	}
+									
+	// $wpdb->insert( 
+	// 'wp_achievements', 
+	// array( 
+		// 'username' => $user_login, 
+		// 'achievementIsDone' => 0,
+		// 'achievement' => '10 kills'
+
+	// ), 
+	// array( 
+		// '%s', 
+		// '%d',
+		// '%s'
+		
+	// ) 
+// );
+
 	return $user_id;
 }
 
