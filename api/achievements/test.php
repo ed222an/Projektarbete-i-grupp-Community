@@ -7,13 +7,9 @@ $dbTable = "wp_achievements";
 
 $conn = new connection();
 $dbh = $conn->getConnection();
-//decrypt av lösenord fått ifrån.
-//https://gist.github.com/t-kashima/5714358
 
-function array_delete($array, $element) {
-    return array_diff($array, [$element]);
-}
-
+//Mickes fulkod som löser problemet med att existerande användare inte får nya achivements om de läggs till nya.
+//Fungerar bra och behövs bara ett knapptryck för att uppdatera allas achievements.
 
 //Kontrollerar request metoden
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -25,9 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$query -> execute($params);
 		//hämtar alla users
 		$result = $query -> fetchAll();
-		
-		//var_dump($result);
-		//die();
+
 		
 		$sql = "SELECT name FROM `wp_achievementlist`";
 		$params = array();
@@ -48,27 +42,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 			}
 		}
 		
+		//Lägger till de achievement som saknas på användarna
 		foreach($namesAndAchievements as $user => $achievements) {
 			echo"<h3>" . $user . "</h3>";
 			foreach($achievements as $achievement) {
 				if($achievement[0] != false)
-					echo "<p>" . $achievement[0] . "</p>";
+					$sql = "INSERT INTO `wp_achievements` (achievement,achievementIsDone, username) VALUES (?,?,?)";
+					$params = array($achievement[0], 0, $user);
+					$query = $dbh -> prepare($sql);
+					$query -> execute($params);
+					//echo "<p>" . $achievement[0] . "</p>";
 			}
 		}
-		
-		var_dump($namesAndAchievements);
+		//var_dump($namesAndAchievements);
 		die();
 
-	
-		$sql = "SELECT username FROM `wp_achievements` WHERE `achievement` = ? group by `username`";
-		$params = array($achievement);
-		$query = $dbh -> prepare($sql);
-		$query -> execute($params);
-		//hämtar vilka som har detta achievement
-		$result2 = $query -> fetchAll();
-		
-		$result = array_diff($result, $result2);
-		
-		var_dump($result);
 		
 }
