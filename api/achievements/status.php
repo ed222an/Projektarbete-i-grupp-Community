@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	);
 
 	//Databasanroper körs
-	if(!empty($username) && !empty($achievement) && !empty($password) ){
+	if(!empty($username) && !empty($achievement) /*&& !empty($password)*/ ){
 
 			$sql = "SELECT user_login FROM wp_users WHERE user_login = ?";
 			$params = array($username);
