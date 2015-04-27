@@ -5,6 +5,14 @@ Template Name: Stats
 ?>
 <?php
 get_header(); ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
@@ -23,6 +31,9 @@ get_header(); ?>
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
+					
+					
+					
 					<?php 
 					
 					global $current_user;
@@ -89,6 +100,7 @@ get_header(); ?>
 		 
 					?>
 					</div>
+					<div class="fb-like" data-href="http://127.0.0.1/Projektarebeteigrupp/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
