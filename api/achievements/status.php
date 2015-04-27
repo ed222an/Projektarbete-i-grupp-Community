@@ -14,6 +14,7 @@ $dbh = $conn->getConnection();
 //Kontrollerar request metoden
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$achievement = isset($_POST['achievement']) ? $_POST['achievement'] : "";
+	$achievement = strtolower($achievement);
 	$achievementIsDone = isset($_POST['achievementIsDone']) ? $_POST['achievementIsDone'] : "";
 	$username = isset($_POST['username']) ? $_POST['username'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
@@ -43,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	);
 
 	//Databasanroper körs
-	if(!empty($username) && !empty($achievement) /*&& !empty($password)*/ ){
+	if(!empty($username) && !empty($achievement) && !empty($password) ){
 
 			$sql = "SELECT user_login FROM wp_users WHERE user_login = ?";
 			$params = array($username);
@@ -67,8 +68,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 				
 						if($check)	
 						{						
-							$sql = "SELECT * FROM wp_achievements WHERE username= ? AND achievement= ? AND achievementIsDone= ?";
-							$params = array($username, $achievement, $achievementIsDone);
+							$sql = "SELECT * FROM wp_achievements WHERE username= ? AND achievement= ?";
+							$params = array($username, $achievement);
 							$query = $dbh -> prepare($sql);
 							$query -> execute($params);
 							$rows = $query -> fetchColumn();
