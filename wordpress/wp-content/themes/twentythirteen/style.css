@@ -215,6 +215,20 @@ mark {
 p {
 	margin: 0 0 24px;
 }
+.message{
+margin: 0 0 24px;
+font-size: 14px;
+max-width: 30%;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+background-color:#FF5C33;
+padding: 3%;
+border-radius:5px;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 
 code,
 kbd,
