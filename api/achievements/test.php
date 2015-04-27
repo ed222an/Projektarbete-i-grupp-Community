@@ -8,18 +8,37 @@ $dbTable = "wp_achievements";
 $conn = new connection();
 $dbh = $conn->getConnection();
 
-//Mickes fulkod som löser problemet med att existerande användare inte får nya achivements om de läggs till nya.
-//Fungerar bra och behövs bara ett knapptryck för att uppdatera allas achievements.
 
 //Kontrollerar request metoden
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$username = isset($_POST['username']) ? $_POST['username'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 	
-	//hårdkodat
 	
-	//$username = "Admin";
-	//$password = "Password";
+	
+	$key = 'This1KeyIsTheBestKey2EvermadeYo3';
+	$iv = 'ThisIv23KeyIsAlsoOneOfTheBestest';
+	
+	$decrypted = base64_decode($password);
+	$password1 = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $key, $decrypted, MCRYPT_MODE_CBC, $iv);
+	
+	$password = preg_replace(
+		array(
+			'/\x00/', '/\x01/', '/\x02/', '/\x03/', '/\x04/',
+			'/\x05/', '/\x06/', '/\x07/', '/\x08/', '/\x09/', '/\x0A/',
+			'/\x0B/','/\x0C/','/\x0D/', '/\x0E/', '/\x0F/', '/\x10/', '/\x11/',
+			'/\x12/','/\x13/','/\x14/','/\x15/', '/\x16/', '/\x17/', '/\x18/',
+			'/\x19/','/\x1A/','/\x1B/','/\x1C/','/\x1D/', '/\x1E/', '/\x1F/'
+		), 
+		array(
+			"", "", "", "", "",
+			"", "", "", "", "", "",
+			"", "", "", "", "", "", "",
+			"", "", "", "", "", "", "",
+			"", "", "", "", "", "", ""
+		), 
+		$password1
+	);
 	
 				$sql = "SELECT user_pass FROM wp_users WHERE user_login = ?";
 				$params = array($username);
@@ -33,9 +52,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$wp_hasher = new PasswordHash(8, TRUE);
 	$check = $wp_hasher->CheckPassword($password, $hash);
 	
+	
+	//Only the Admin user can do this
 	if($check && $username = "Admin"){
-				$sql = "SELECT user_login FROM `wp_users`";
-		$params = array($achievement);
+		$sql = "SELECT user_login FROM `wp_users`";
+		$params = array();
 		$query = $dbh -> prepare($sql);
 		$query -> execute($params);
 		//hämtar alla users
@@ -63,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
 		//Lägger till de achievement som saknas på användarna
 		foreach($namesAndAchievements as $user => $achievements) {
-			echo"<h3>" . $user . "</h3>";
+			
 			foreach($achievements as $achievement) {
 				if($achievement[0] != false)
 					$sql = "INSERT INTO `wp_achievements` (achievement,achievementIsDone, username) VALUES (?,?,?)";
@@ -72,7 +93,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 					$query -> execute($params);
 					//echo "<p>" . $achievement[0] . "</p>";
 			}
-		}		
+		}
+			echo "Achievements were added successfully!";
 	}
 	
 

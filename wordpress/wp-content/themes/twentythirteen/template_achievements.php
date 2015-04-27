@@ -27,6 +27,9 @@ get_header(); ?>
 						<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
+					
+					
+					
 					<?php 	
 					global $current_user;
 					global $wpdb;
@@ -38,7 +41,7 @@ get_header(); ?>
 					//echo 'User display name: ' . $current_user->display_name . "\n";
 					//echo 'User ID: ' . $current_user->ID . "\n";
 			
-			
+					
 				
 				
 				//Kod som hämtar ut ens egna achievements och om de är avklarade eller inte
@@ -51,6 +54,22 @@ get_header(); ?>
 					wp_login_form();
 				}
 				else{
+	
+	
+				//Visar update-knappen för admin
+					global $user_ID; 
+					
+					if( $user_ID ){
+						if( current_user_can('level_10') ){
+							echo "<form method='POST' action='http://127.0.0.1/achievements/test.php'>
+							<br><p>Username</p>
+							<input type='text' name='username' value=''>
+							<br><p>Password</p>
+							<input type='password' name='password' value=''>
+							<br><br><input type='submit' name='submit' value='Update achievements'>
+							</form>";
+						}
+					}
 					//Visar achievements från databasen
 					foreach($result as $row)
 					 {
