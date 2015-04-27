@@ -8,6 +8,7 @@
 	//Get parameters
 	$username = isset($_GET['username']) ? $_GET['username'] :  "";
 	$achievementName = isset($_GET['achievementName']) ? $_GET['achievementName'] :  "";
+	$achievementName = strtolower($achievementName);
 	$status = isset($_GET['status']) ? $_GET['status'] :  "";
 
 	//Gets single achievement by username
@@ -82,6 +83,10 @@
 			array_push($json_data,$json_array);  
 		}  
 		$json = $json_data;
+	}
+	elseif(!empty($username) && !empty($achievementName) && !empty($status))
+	{
+		$json = array("status" => 0, "msg" => "Error input try choose get all alternative");
 	}
 	
 	else{
