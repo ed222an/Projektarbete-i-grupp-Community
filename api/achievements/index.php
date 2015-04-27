@@ -30,8 +30,9 @@
 
 <h3>Test</h3>
 <form action="http://127.0.0.1/achievements/test.php" method="POST">
-    <br>Achievement name
-	<input type="text" name="achievement" value="50 Kills">
+    <br>Update achievements on all users
+	<input type="text" name="username" value="Admin">
+	<input type="text" name="password" value="Password">
 
         <input type="submit" value="Skicka">
 </form>

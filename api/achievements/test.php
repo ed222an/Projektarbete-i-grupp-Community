@@ -13,9 +13,28 @@ $dbh = $conn->getConnection();
 
 //Kontrollerar request metoden
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	$achievement = isset($_POST['achievement']) ? $_POST['achievement'] : "";
+	$username = isset($_POST['username']) ? $_POST['username'] : "";
+	$password = isset($_POST['password']) ? $_POST['password'] : "";
 	
-		$sql = "SELECT user_login FROM `wp_users`";
+	//hårdkodat
+	
+	//$username = "Admin";
+	//$password = "Password";
+	
+				$sql = "SELECT user_pass FROM wp_users WHERE user_login = ?";
+				$params = array($username);
+				$query = $dbh -> prepare($sql);
+				$query -> execute($params);
+				$result = $query -> fetch();
+				$password = "Password";
+				$hash = $result['user_pass'];
+	
+	
+	$wp_hasher = new PasswordHash(8, TRUE);
+	$check = $wp_hasher->CheckPassword($password, $hash);
+	
+	if($check && $username = "Admin"){
+				$sql = "SELECT user_login FROM `wp_users`";
 		$params = array($achievement);
 		$query = $dbh -> prepare($sql);
 		$query -> execute($params);
@@ -53,7 +72,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 					$query -> execute($params);
 					//echo "<p>" . $achievement[0] . "</p>";
 			}
-		}
+		}		
+	}
+	
+
 		//var_dump($namesAndAchievements);
 		die();
 
