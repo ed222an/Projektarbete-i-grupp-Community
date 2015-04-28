@@ -18,36 +18,73 @@ Template Name: share
 
 get_header(); ?>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+			
+			<?php
+			//http://webcheatsheet.com/php/get_current_page_url.php
+				function currentPageURL() {
+				 $pageURL = 'http';
+				 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+				 $pageURL .= "://";
+				 if ($_SERVER["SERVER_PORT"] != "80") {
+				  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+				 } else {
+				  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+				 }
+				 return $pageURL;
+				}
+			?>
+			
+			
+			
 			<?php 	
 			
 					global $current_user;
 					global $wpdb;
 					get_currentuserinfo();
 					
+					//Gets the user and achievement parameters
 					$user = $_GET['user'];
 					$achievement = $_GET['achievement'];
 					
-					
+					//Gets the specific achievement
 					$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user' AND achievement = '$achievement'");
 					
 					if(empty($result)){
 						echo "empty";
 					}
 					
+					//Shows the achievement
 					foreach($result as $row)
 					 {
-						echo $row->achievement;
+						$status = "In Progress";
+						if($row->achievementIsDone == 1){
+							 $status = "Done";
+						}
+						echo $row->achievementCompletedDate;
+						echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+						$row->achievementCompleteDate;
 					 }
 					
 					//echo $result;
  
 			?>
-			
+			<div class="fb-share-button" data-href="currentPageURL()" data-layout="box_count"></div>
 			
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
