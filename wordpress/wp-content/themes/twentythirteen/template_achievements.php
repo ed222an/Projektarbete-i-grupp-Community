@@ -17,6 +17,15 @@ Template Name: Achievements
  */
 
 get_header(); ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 						<header class="entry-header">
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 						<div class="entry-thumbnail">
@@ -28,7 +37,13 @@ get_header(); ?>
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 					
-					
+					<a title="send to Facebook" 
+					  href="http://www.facebook.com/sharer.php?s=100&p[title]=YOUR_TITLE&p[summary]=YOUR_SUMMARY&p[url]=YOUR_URL&p[images][0]=YOUR_IMAGE_TO_SHARE_OBJECT"
+					  target="_blank">
+					  <span>
+						<img width="14" height="14" src="'icons/fb.gif" alt="Facebook" /> Facebook 
+					  </span>
+					</a>
 					
 					<?php 	
 					global $current_user;
@@ -61,10 +76,10 @@ get_header(); ?>
 					
 					if( $user_ID ){
 						if( current_user_can('level_10') ){
-							echo "<form method='POST' class='message' action='http://127.0.0.1/achievements/test.php'>
+							echo "<form method='POST' action='http://127.0.0.1/achievements/test.php'>
 							<p>This will update all achievements on the user so they will have the latest list of achievements. Only the Admin user can use this function. This function will not delete or change the status of the achievements, it will only add those achievements that is missing on the users.</p>
 							<br><p>Username</p>
-							<input type='text' name='username' value=''><br>
+							<input type='text' name='username' value=''>
 							<br><p>Password</p>
 							<input type='password' name='password' value=''>
 							<br><br><input type='submit' name='submit' value='Update achievements'>
