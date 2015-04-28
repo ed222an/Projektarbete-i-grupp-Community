@@ -76,7 +76,7 @@ get_header(); ?>
 					
 					if( $user_ID ){
 						if( current_user_can('level_10') ){
-							echo "<form method='POST' action='http://127.0.0.1/achievements/test.php'>
+							echo "<form method='POST' class='message' action='http://127.0.0.1/achievements/test.php'>
 							<p>This will update all achievements on the user so they will have the latest list of achievements. Only the Admin user can use this function. This function will not delete or change the status of the achievements, it will only add those achievements that is missing on the users.</p>
 							<br><p>Username</p>
 							<input type='text' name='username' value=''>
