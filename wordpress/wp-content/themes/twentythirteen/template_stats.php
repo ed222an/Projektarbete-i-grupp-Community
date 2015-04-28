@@ -27,7 +27,7 @@ get_header(); ?>
 						</div>
 						<?php endif; ?>
 
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="entry-title"><img src="wp-includes/images/statspic.png"><?php the_title(); ?></h1>
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -95,8 +95,8 @@ get_header(); ?>
 								}
 							echo "</div>";
 							
-							echo "<h2>Top 10 highest level</h2><br>";
-							echo "<h2>Top 10 longest playtime</h2><br>";
+							echo "<div class='statColumn'><h2>Top 10 highest level</h2><br></div>";
+							echo "<div class='statColumn'><h2>Top 10 longest playtime</h2><br></div>";
 		 
 					?>
 					</div>
