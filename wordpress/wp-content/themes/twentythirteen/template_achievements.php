@@ -54,35 +54,35 @@ get_header(); ?>
 				}
 				else{
 	
-	
-				//Visar update-knappen för admin
-					global $user_ID; 
-					
-					if( $user_ID ){
-						if( current_user_can('level_10') ){
-							echo "<form method='POST' class='message' action='http://127.0.0.1/achievements/test.php' id='hideMe'>
-							<p>This will update all achievements on the user so they will have the latest list of achievements. Only the Admin user can use this function. This function will not delete or change the status of the achievements, it will only add those achievements that is missing on the users.</p>
-							<br><p>Username</p>
-							<input type='text' name='username' value=''>
-							<br><p>Password</p>
-							<input type='password' name='password' value=''>
-							<br><br><input type='submit' name='submit' value='Update achievements'>
-							</form>";
+		
+					//Visar update-knappen för admin
+						global $user_ID; 
+						
+						if( $user_ID ){
+							if( current_user_can('level_10') ){
+								echo "<form method='POST' class='message' action='http://127.0.0.1/achievements/test.php' id='hideMe'>
+								<p>This will update all achievements on the user so they will have the latest list of achievements. Only the Admin user can use this function. This function will not delete or change the status of the achievements, it will only add those achievements that is missing on the users.</p>
+								<br><p>Username</p>
+								<input type='text' name='username' value=''>
+								<br><p>Password</p>
+								<input type='password' name='password' value=''>
+								<br><br><input type='submit' name='submit' value='Update achievements'>
+								</form>";
+							}
+						}
+						//Visar achievements från databasen och skapar länkar så att de kan delas
+						foreach($result as $row)
+						{
+							$status = "In Progress";
+							if($row->achievementIsDone == 1){
+								$status = "Done";
+							}
+							echo $row->achievementCompletedDate;
+							echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
+							"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
 						}
 					}
-					//Visar achievements från databasen och skapar länkar så att de kan delas
-					foreach($result as $row)
-					 {
-						 $status = "In Progress";
-						 if($row->achievementIsDone == 1){
-							 $status = "Done";
-						 }
-						 echo $row->achievementCompletedDate;
-						echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-						$row->achievementCompleteDate . "<a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
-						"&" . "achievement=$row->achievement'>Test</a>" . "<br><br>";
-					 }
-				}
 					?>
 					
 					

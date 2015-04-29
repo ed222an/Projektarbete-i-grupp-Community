@@ -36,6 +36,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			
 			<?php
+			//Function that gets the current url
 			//http://webcheatsheet.com/php/get_current_page_url.php
 				function currentPageURL() {
 				 $pageURL = 'http';
@@ -49,44 +50,6 @@ get_header(); ?>
 				 return $pageURL;
 				}
 			?>
-			
-			
-			
-			<?php 	
-			
-					global $current_user;
-					global $wpdb;
-					get_currentuserinfo();
-					
-					//Gets the user and achievement parameters
-					$user = $_GET['user'];
-					$achievement = $_GET['achievement'];
-					
-					//Gets the specific achievement
-					$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user' AND achievement = '$achievement'");
-					
-					if(empty($result)){
-						echo "empty";
-					}
-					
-					//Shows the achievement
-					foreach($result as $row)
-					 {
-						$status = "In Progress";
-						if($row->achievementIsDone == 1){
-							 $status = "Done";
-						}
-						echo $row->achievementCompletedDate;
-						echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-						$row->achievementCompleteDate;
-					 }
-					
-					//echo $result;
- 
-			?>
-			<div class="fb-share-button" data-href="currentPageURL()" data-layout="box_count"></div>
-			
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
@@ -100,6 +63,45 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<?php the_content(); ?>
+						<?php 	
+			
+							global $current_user;
+							global $wpdb;
+							get_currentuserinfo();
+							
+							//Gets the user and achievement parameters
+							$user = $_GET['user'];
+							$achievement = $_GET['achievement'];
+							
+							//Gets the specific achievement
+							$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user' AND achievement = '$achievement'");
+							
+							//If no rows exist an error message is shown
+							if(empty($result)){
+								echo "Something went wrong!";
+							}
+							else{
+								//Shows the achievement
+									foreach($result as $row){
+											$status = "In Progress";
+											if($row->achievementIsDone == 1){
+												 $status = "Done";
+											}
+											echo $row->achievementCompletedDate;
+											echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+											$row->achievementCompleteDate;
+											
+											//Add social media here
+											$url = currentPageURL();
+											if($user == $current_user->user_login){
+												echo "<br><div class='fb-share-button' data-href='$url' data-layout='box_count'></div>";
+											}
+										}
+							}
+ 
+			?>
+						
+						
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 					</div><!-- .entry-content -->
 
