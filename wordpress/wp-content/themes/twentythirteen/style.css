@@ -106,9 +106,6 @@ audio:not([controls]) {
   height: 400px;
 }
 
-#hideMe{
-    display:none
-}
 
 html {
 	font-size: 100%;

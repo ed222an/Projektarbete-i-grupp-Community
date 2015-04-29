@@ -37,7 +37,7 @@ get_header(); ?>
 						<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-					<button class="button" onclick="toggle_visibility('hideMe')">Update</button><br>
+					
 					<?php 	
 					global $current_user;
 					global $wpdb;
@@ -53,10 +53,25 @@ get_header(); ?>
 					wp_login_form();
 				}
 				else{
-	
+					$single = "'";
+					$double = '"';
+					//str_replace("world","Peter","Hello world!");
 		
 					//Visar update-knappen för admin
 						global $user_ID; 
+						
+						//Visar achievements från databasen och skapar länkar så att de kan delas
+						foreach($result as $row)
+						{
+							$status = "In Progress";
+							if($row->achievementIsDone == 1){
+								$status = "Done";
+							}
+							echo $row->achievementCompletedDate;
+							echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
+							"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
+						}
 						
 						if( $user_ID ){
 							if( current_user_can('level_10') ){
@@ -69,18 +84,6 @@ get_header(); ?>
 								<br><br><input type='submit' name='submit' value='Update achievements'>
 								</form>";
 							}
-						}
-						//Visar achievements från databasen och skapar länkar så att de kan delas
-						foreach($result as $row)
-						{
-							$status = "In Progress";
-							if($row->achievementIsDone == 1){
-								$status = "Done";
-							}
-							echo $row->achievementCompletedDate;
-							echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
-							"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
 						}
 					}
 					?>
