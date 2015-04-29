@@ -1,6 +1,6 @@
 <h2>API</h2>
 <h3>POST</h3>
-<form action="http://127.0.0.1/achievements/status.php" method="POST">
+<form action="http://127.0.0.1/achievements/PostAchievement.php" method="POST">
     <br>Achievement
 	<input type="text" name="achievement" value="10 Kills">
 	<br>Achievement is done
@@ -13,7 +13,7 @@
 </form>
 
 <h3>GET all achievements on user</h3>
-<form action="http://127.0.0.1/achievements/info.php" method="GET">
+<form action="http://127.0.0.1/achievements/GetAchievement.php" method="GET">
     <br>Achievement name
 	<input type="text" name="achievementName" value="10 Kills">
 	<br>Username
@@ -29,7 +29,7 @@
 </form>
 
 <h3>Test</h3>
-<form action="http://127.0.0.1/achievements/test.php" method="POST">
+<form action="http://127.0.0.1/achievements/UpdateAchievement.php" method="POST">
     <br>Update achievements on all users
 	<input type="text" name="username" value="Admin">
 	<input type="text" name="password" value="Password">
