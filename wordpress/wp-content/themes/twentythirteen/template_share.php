@@ -29,6 +29,7 @@ get_header(); ?>
 
 
 
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
@@ -94,8 +95,13 @@ get_header(); ?>
 											//Add social media here
 											$url = currentPageURL();
 											if($user == $current_user->user_login){
-												echo "<br><div class='fb-share-button' data-href='$url' data-layout='box_count'></div>";
+												echo "<br><div class='fb-share-button' data-href='' data-layout='box_count'></div>";
+												echo "<br><div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div><br>";
 											}
+											else{
+												echo "<br><div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div><br>";
+											}
+											
 										}
 							}
  
