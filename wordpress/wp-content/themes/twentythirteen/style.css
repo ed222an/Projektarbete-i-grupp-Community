@@ -90,7 +90,7 @@ audio:not([controls]) {
 [hidden] {
 	display: none;
 }
-<!--https://css-tricks.com/almanac/properties/t/transition/-->
+/*https://css-tricks.com/almanac/properties/t/transition/*/
 .statColumn {
 	display: inline-table;
   width: 25%;
