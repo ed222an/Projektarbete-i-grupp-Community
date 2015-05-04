@@ -27,6 +27,7 @@ get_header(); ?>
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 
 
@@ -95,13 +96,25 @@ get_header(); ?>
 											echo $row->achievementCompletedDate;
 											echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
 											$row->achievementCompleteDate;
-											
+											// data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'
 											//Add social media here
 											$url = currentPageURL();
 											if($user == $current_user->user_login){
 												echo "<a href='http://www.facebook.com/share.php?u=http://www.metalgenre.se/wordpress/?page_id=43&user=Admin&achievement=50%20kills&title=Testar'>DELA SKITEN</a>";
 												echo "<br><div class='fb-share-button' data-href='' data-layout='box_count'></div>";
 												echo "<br><div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div><br>";
+												//echo "<a href='https://twitter.com/intent/tweet' class='twitter-share-button' data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'>Tweet</a>";
+												echo "<a class='twitter-share-button'
+													  href='https://twitter.com/share'
+													  data-size='small'
+													  data-url='$url'
+													  data-count-url='$url'
+													  data-via=''
+													  data-related=''
+													  data-hashtags=''
+													  data-text='Completed achievement $row->achievement on $row->achievementCompleteDate'>
+													Tweet
+													</a>";
 											}
 											else{
 												echo "<br><div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div><br>";
@@ -111,7 +124,6 @@ get_header(); ?>
 							}
  
 			?>
-						
 						
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 					</div><!-- .entry-content -->

@@ -69,7 +69,7 @@ get_header(); ?>
 							}
 							echo $row->achievementCompletedDate;
 							echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=43&user=$current_user->user_login" . 
+							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
 							"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
 						}
 						
