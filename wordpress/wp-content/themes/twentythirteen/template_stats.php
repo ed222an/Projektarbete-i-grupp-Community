@@ -91,13 +91,13 @@ get_header(); ?>
 					
 							echo "<div class='statColumn'><h2>Top 10 killers</h2><br>";
 								foreach($topResultKills as $row){
-									echo $row->Username . " got " . " ".$row->statCount . " kills<br>";
+									echo $row->username . " got " . " ".$row->statCount . " kills<br>";
 								}
 							echo "</div>";
 							
 							echo "<div class='statColumn'><h2>Top 10 most killed</h2><br>";
 								foreach($topResultDeaths as $row){
-									echo $row->Username . " have died " . " ".$row->statCount . " times<br>";
+									echo $row->username . " have died " . " ".$row->statCount . " times<br>";
 								}
 							echo "</div>";
 							
@@ -106,7 +106,7 @@ get_header(); ?>
 		 
 					?>
 					</div>
-					<div class="fb-like" data-href="http://127.0.0.1/Projektarebeteigrupp/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
+					<div class="fb-like" data-href="http://127.0.0.1/Projektarbeteigrupp/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
