@@ -90,32 +90,57 @@ audio:not([controls]) {
 [hidden] {
 	display: none;
 }
-.box{
+.boxDone{
 	width:50%;
 	height:10%;
 	margin-left:auto;
 	margin-right:auto;
-	background-color:gray;
+	background-color:grey;
 	padding:1%;
 	margin-bottom:2%;
 	overflow:hidden;
 	border-radius:5px;
+	position: relative;
 }
-.box img{
+.boxNotDone{
+	width:50%;
+	height:10%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:grey;
+	padding:1%;
+	margin-bottom:2%;
+	overflow:hidden;
+	border-radius:5px;
+	position: relative;
+	opacity: 0.4;
+}
+.boxDone img{
+	border-radius:5px;
+	float:left;
+}
+.boxNotDone img{
 	border-radius:5px;
 	float:left;
 }
 .achiName{
-	font-size:20px;
+	font-size:19px;
+	font-weight: bold;
 }
 .achiStatus{
-
+	
 }
 .achiDate{
-
+	font-size:12px;
+	font-weight: italic;
+	position: absolute; 
+	bottom: 0;
+right:5%;	
 }
 .achiShare{
-
+	position: absolute; 
+	top:0;
+	right:1%;
 }
 /*https://css-tricks.com/almanac/properties/t/transition/*/
 .statColumn {

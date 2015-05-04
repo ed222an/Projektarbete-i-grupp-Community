@@ -63,25 +63,28 @@ get_header(); ?>
 						//Visar achievements från databasen och skapar länkar så att de kan delas
 						foreach($result as $row)
 						{
-							echo "<div class='box'>";
-							echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
+
 							$status = "In Progress";
 							if($row->achievementIsDone == 1){
 								$status = "Done";
-								
+								echo "<div class='boxDone'>";
+								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
 								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div> <div class='achiShare'><a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=43&user=$current_user->user_login" . 
 								"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "</div>";
+								echo"</div>";
 							}
 							if($row->achievementIsDone == 0)
 							{
+								echo "<div class='boxNotDone'>";
+								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
 								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
-								
+								echo"</div>";
 							}
-							echo"</div>";
+							
 						}
 						
 						if( $user_ID ){
