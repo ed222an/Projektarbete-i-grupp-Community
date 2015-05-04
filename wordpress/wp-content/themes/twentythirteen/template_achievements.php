@@ -66,11 +66,18 @@ get_header(); ?>
 							$status = "In Progress";
 							if($row->achievementIsDone == 1){
 								$status = "Done";
+								echo $row->achievementCompletedDate;
+								echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+								$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
+								"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
 							}
-							echo $row->achievementCompletedDate;
-							echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-							$row->achievementCompleteDate . "<br><a href='http://127.0.0.1/Projektarebeteigrupp/?page_id=43&user=$current_user->user_login" . 
-							"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "<br><br>";
+							if($row->achievementIsDone == 0)
+							{
+								echo $row->achievementCompletedDate;
+								echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
+								$row->achievementCompleteDate . "<br><br>";
+							}
+							
 						}
 						
 						if( $user_ID ){
