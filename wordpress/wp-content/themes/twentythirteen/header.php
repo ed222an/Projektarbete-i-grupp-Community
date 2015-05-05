@@ -21,6 +21,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
+	<meta property="og:title" content="Five Angry Dwarves" />
+	<meta property="og:description" content="Completed an achievement" />
 	<title><?php
 		wp_title( '|', true, 'right' );
 	?></title>

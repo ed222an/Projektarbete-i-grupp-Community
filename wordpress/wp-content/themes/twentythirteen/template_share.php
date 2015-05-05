@@ -93,16 +93,19 @@ get_header(); ?>
 											if($row->achievementIsDone == 1){
 												 $status = "Done";
 											}
+											echo "<div class='boxDone'>";
+											echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 											echo $row->achievementCompletedDate;
-											echo "<b>Achivement name: " . $row->achievement . "</b> <br> " . "Achivement status: " . $status . "<br> Completed: " . 
-											$row->achievementCompleteDate;
+											echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+											$row->achievementCompleteDate . "</div>";
+											echo "</div>";
 											// data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'
 											//Add social media here
 											$url = currentPageURL();
 											if($user == $current_user->user_login){
-												echo "<a href='http://www.facebook.com/share.php?u=http://www.metalgenre.se/wordpress/?page_id=43&user=Admin&achievement=50%20kills&title=Testar'>DELA SKITEN</a>";
-												echo "<br><div class='fb-share-button' data-href='' data-layout='box_count'></div>";
-												echo "<br><div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div><br>";
+												//echo "<a href='http://www.facebook.com/share.php?u=http://www.metalgenre.se/wordpress/?page_id=43&user=Admin&achievement=50%20kills&title=Testar'>DELA SKITEN</a>";
+												echo "<div class='fb-share-button' data-href='' data-layout='button'></div>";
+												echo "<div class='fb-like' data-href='$url' data-layout='standard' data-action='like' data-show-faces='true' data-share='false'></div>";
 												//echo "<a href='https://twitter.com/intent/tweet' class='twitter-share-button' data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'>Tweet</a>";
 												echo "<a class='twitter-share-button'
 													  href='https://twitter.com/share'

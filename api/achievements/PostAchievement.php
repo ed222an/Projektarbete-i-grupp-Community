@@ -19,6 +19,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$username = isset($_POST['username']) ? $_POST['username'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
 	
+	
+	
+	
 	$key = 'This1KeyIsTheBestKey2EvermadeYo3';
 	$iv = 'ThisIv23KeyIsAlsoOneOfTheBestest';
 
@@ -75,20 +78,28 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 							$rows = $query -> fetchColumn();
 							
 							if($rows) {
-								
-								$sql = "UPDATE $dbTable SET achievementIsDone = ? WHERE username = ? AND achievement= ?";
-								$params = array($achievementIsDone, $username, $achievement);
-								$query = $dbh -> prepare($sql);
-								$query -> execute($params);
-								$json = array("result" => 1, "message" => "Edit Success");
+								if($achievementIsDone > 1 || $achievementIsDone < 0){
+									$json = array("result" => 0, "message" => "Something went wrong!");
+								}
+								else{
+									$sql = "UPDATE $dbTable SET achievementIsDone = ? WHERE username = ? AND achievement= ?";
+									$params = array($achievementIsDone, $username, $achievement);
+									$query = $dbh -> prepare($sql);
+									$query -> execute($params);
+									$json = array("result" => 1, "message" => "Edit Success");
+								}
 							}
 							else{
-								
-								$sql = "INSERT INTO $dbTable (achievement,achievementIsDone, username) VALUES (?,?,?)";
-								$params = array($achievement, $achievementIsDone,$username);
-								$query = $dbh -> prepare($sql);
-								$query -> execute($params);
-								$json = array("result" => 1, "message" => "Add Success");
+								if($achievementIsDone > 1 || $achievementIsDone < 0){
+									$json = array("result" => 0, "message" => "Something went wrong!");
+								}
+								else{
+									$sql = "INSERT INTO $dbTable (achievement,achievementIsDone, username) VALUES (?,?,?)";
+									$params = array($achievement, $achievementIsDone,$username);
+									$query = $dbh -> prepare($sql);
+									$query -> execute($params);
+									$json = array("result" => 1, "message" => "Add Success");
+								}
 							}
 						}
 						else{
