@@ -722,6 +722,12 @@ p.form-allowed-tags {
 	width: 100%;
 	margin: 0;
 	font-size: 12px;
+	background-color:#E6E6E6;
+}
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content:focus {
+	width: 100%;
+	margin: 0;
+	background-color:#F7F7F7;
 }
 
 #bbpress-forums div.bbp-the-content-wrapper table,
@@ -1092,7 +1098,7 @@ fieldset div.avatar {
 }
 
 #bbpress-forums #bbp-user-body {
-	margin-left: 180px;
+	/*margin-left: 180px;*/
 }
 
 body.my-account #bbpress-forums {
