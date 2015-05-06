@@ -447,7 +447,7 @@ max-width: 30%;
 margin-left:auto;
 margin-right:auto;
 text-align:center;
-background-color:#FF5C33;
+background-color:#FFA200;
 padding: 3%;
 border-radius:5px;
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -818,7 +818,6 @@ hr {
 button,
 input,
 textarea {
-	border: 2px solid #d4d0ba;
 	font-family: inherit;
 	padding: 5px;
 }
@@ -840,11 +839,7 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"] {
 	background: #e05d22; /* Old browsers */
-	background: -webkit-linear-gradient(top, #e05d22 0%, #d94412 100%); /* Chrome 10+, Safari 5.1+ */
-	background:   linear-gradient(to bottom, #e05d22 0%, #d94412 100%); /* W3C */
-	border: none;
-	border-bottom: 3px solid #b93207;
-	border-radius: 2px;
+	background-color:#9B6300;
 	color: #fff;
 	display: inline-block;
 	padding: 11px 24px 10px;
@@ -2877,7 +2872,7 @@ footer.entry-meta {
 }
 
 .site-footer a {
-	color: #686758;
+	color: #fff;
 }
 
 .site-footer .sidebar-container {

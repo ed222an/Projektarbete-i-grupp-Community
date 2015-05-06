@@ -26,12 +26,13 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
+						<!--
 						<div class="card-container">
 						  <div class="card">
 							<div class="side"><img src="wp-includes/images/statspic.png" alt="Five Angry Dwarves"></div>
 							<div class="side back">Five Angry Dwarves</div>
 						  </div>
-						</div>
+						</div> -->
 						<h1 class="entry-title">
 						<?php the_title(); ?></h1>
 							<div class="entry-title">
