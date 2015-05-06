@@ -43,7 +43,7 @@ body.reply-edit .reply {
 #bbpress-forums div.bbp-forum-header,
 #bbpress-forums div.bbp-topic-header,
 #bbpress-forums div.bbp-reply-header {
-	background-color: #f4f4f4;
+	background-color: #9B7D00;
 }
 
 #bbpress-forums .status-trash.even,
@@ -255,7 +255,6 @@ li.bbp-body div.hentry {
 div.bbp-forum-header,
 div.bbp-topic-header,
 div.bbp-reply-header {
-	border-top: 1px solid #ddd;
 	clear: both;
 }
 
@@ -616,6 +615,7 @@ td.bbp-topic-counts {
 	border: 1px solid #eee;
 	padding: 10px 20px;
 	margin-bottom: 10px;
+	/*background-color:#FFD839;*/
 }
 
 #bbpress-forums fieldset.bbp-form legend {
@@ -877,7 +877,7 @@ div.bbp-template-notice a {
 	}
 	div.bbp-template-notice.info {
 		border: #cee1ef 1px solid;
-		background-color: #f0f8ff;
+		/*background-color: #f0f8ff;*/
 	}
 	div.bbp-template-notice.important {
 		border: #e6db55 1px solid;
