@@ -148,7 +148,7 @@ slideRight
 	height:10%;
 	margin-left:auto;
 	margin-right:auto;
-	background-color:grey;
+	background-color:#FFD839;
 	padding:1%;
 	margin-bottom:2%;
 	overflow:hidden;
@@ -171,7 +171,7 @@ slideRight
 	height:10%;
 	margin-left:auto;
 	margin-right:auto;
-	background-color:grey;
+	background-color:#FFD839;
 	padding:1%;
 	margin-bottom:2%;
 	overflow:hidden;
@@ -1250,7 +1250,7 @@ ul.nav-menu .focus > ul,
 
 /* Navbar */
 .navbar {
-	background-color: #f7f5e7;
+	background-color: #C69F00;
 	margin: 0 auto;
 	max-width: 1600px;
 	width: 100%;
@@ -2865,7 +2865,7 @@ footer.entry-meta {
  */
 
 .site-footer {
-	background-color: #e8e5ce;
+	background-color: #9B7D00;
 	color: #686758;
 	font-size: 14px;
 	text-align: center;
@@ -2881,7 +2881,7 @@ footer.entry-meta {
 }
 
 .site-footer .sidebar-container {
-	background-color: #220e10;
+	background-color: #ffcc00;
 	padding: 20px 0;
 }
 
@@ -2921,7 +2921,7 @@ footer.entry-meta {
 .site-footer .widget-title,
 .site-footer .widget-title a,
 .site-footer .wp-caption-text {
-	color: #fff;
+	color: #000000;
 }
 
 .site-info {

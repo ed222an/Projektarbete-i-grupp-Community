@@ -144,25 +144,11 @@ input[type="password"] {
 
 #simplr-form input[type=submit] {
 	width:200px; 
-	border: 1px solid #666; 
-	color: #fff;
-	border-radius: 6px;
+	color: #000;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
-	background-image: linear-gradient(bottom, #219473 40%, #338C71 75%, #2A8065 89%);
-	background-image: -o-linear-gradient(bottom, #219473 40%, #338C71 75%, #2A8065 89%);
-	background-image: -moz-linear-gradient(bottom, #219473 40%, #338C71 75%, #2A8065 89%);
-	background-image: -webkit-linear-gradient(bottom, #219473 40%, #338C71 75%, #2A8065 89%);
-	background-image: -ms-linear-gradient(bottom, #219473 40%, #338C71 75%, #2A8065 89%);
-	
-	background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.4, #219473),
-	color-stop(0.75, #338C71),
-	color-stop(0.89, #2A8065)
-	);
+	background-color:#FFF700;
+
 	
 	box-shadow: 1px 1px 5px #555;
 	-webkit-box-shadow: 1px 1px 5px #555;
@@ -173,20 +159,7 @@ input[type="password"] {
 #simplr-form input[type=submit]:hover {
 	color:#eee;
 	cursor: pointer;
-	background-image: linear-gradient(, #219473 40%, #338C71 75%, #2A8065 87%);
-	background-image: -o-linear-gradient(, #219473 40%, #338C71 75%, #2A8065 87%);
-	background-image: -moz-linear-gradient(, #219473 40%, #338C71 75%, #2A8065 87%);
-	background-image: -webkit-linear-gradient(, #219473 40%, #338C71 75%, #2A8065 87%);
-	background-image: -ms-linear-gradient(, #219473 40%, #338C71 75%, #2A8065 87%);
-	
-	background-image: -webkit-gradient(
-		linear,
-		left top,
-		left top,
-		color-stop(0.4, #219473),
-		color-stop(0.75, #338C71),
-		color-stop(0.87, #2A8065)
-	);
+	background-color:#C6BF00;
 	
 }
 
