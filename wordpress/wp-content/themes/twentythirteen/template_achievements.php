@@ -19,14 +19,6 @@ Template Name: Achievements
 get_header(); ?>
 
 
-<script>
-	function toggle_visibility(id) {
-		var e = document.getElementById(id);
-		if (e.style.display == 'block' || e.style.display=='') e.style.display = 'none';
-		else e.style.display = 'block';
-	}
-</script>
-
 						<header class="entry-header">
 						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 						<div class="entry-thumbnail">
@@ -123,7 +115,7 @@ get_header(); ?>
 					
 				</article><!-- #post -->
 
-				<!--<?php comments_template(); ?>-->
+
 			<?php endwhile; ?>
 
 		</div><!-- #content -->
