@@ -149,7 +149,14 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+	
+						<div class="card-container">
+						  <div class="card">
+							<div class="side"><img src="wp-includes/images/statspic.png" alt="Five Angry Dwarves"></div>
+							<div class="side back">Five Angry Dwarves</div>
+						  </div>
+						</div> 
+		
 	<?php
 
 	unset( $login_header_url, $login_header_title );
