@@ -57,8 +57,11 @@ get_header(); ?>
 						global $user_ID; 
 						
 						//Visar achievements från databasen och skapar länkar så att de kan delas
+						
 						foreach($result as $row)
 						{
+							$desc = $wpdb->get_results( "SELECT description FROM wp_achievementlist WHERE name = '$row->achievement'");
+							foreach($desc as $descRow){
 
 							$status = "In Progress";
 							if($row->achievementIsDone == 1){
@@ -66,7 +69,7 @@ get_header(); ?>
 								echo "<div class='boxDone'>";
 								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div> <div class='achiShare'><a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=43&user=$current_user->user_login" . 
 								"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "</div>";
 								echo"</div>";
@@ -76,9 +79,10 @@ get_header(); ?>
 								echo "<div class='boxNotDone'>";
 								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
 								echo"</div>";
+							}
 							}
 							
 						}
@@ -96,6 +100,12 @@ get_header(); ?>
 							}
 						}
 					}
+					echo "Search for a user";
+					echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+						<input name='user' type='text' value=''/>
+						<input type='submit' value='Search'>
+					</form>";
+					
 					
 					$result = $wpdb->get_results( "SELECT display_name FROM wp_users ORDER BY display_name ASC");
 					
@@ -106,6 +116,7 @@ get_header(); ?>
 							}
 						}
 					?>
+					
 					
 					
 					</div>

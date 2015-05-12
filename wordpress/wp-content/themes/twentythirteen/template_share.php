@@ -2,25 +2,6 @@
 /*
 Template Name: share
 */
-global $current_user;
-global $wpdb;
-get_currentuserinfo();
-
-//Gets the user and achievement parameters
-$user = $_GET['user'];
-$achievement = $_GET['achievement'];
-
-//Gets the specific achievement
-$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user' AND achievement = '$achievement'");
-
-foreach($result as $row){
-	if($row->achievementIsDone == 0){
-		 header("Location: http://127.0.0.1/Projektarbeteigrupp/?page_id=10");
-	}
-}
-
-
-
 ?>
 <?php
 /**
@@ -112,12 +93,16 @@ get_header(); ?>
 											if($row->achievementIsDone == 1){
 												 $status = "Done";
 											}
-											echo "<div class='boxDone'>";
-											echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
-											echo $row->achievementCompletedDate;
-											echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
-											$row->achievementCompleteDate . "</div>";
-											echo "</div>";
+								
+							$desc = $wpdb->get_results( "SELECT description FROM wp_achievementlist WHERE name = '$row->achievement'");
+							foreach($desc as $descRow){		
+								
+								echo "<div class='boxDone'>";
+								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
+								echo $row->achievementCompletedDate;
+								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								$row->achievementCompleteDate . "</div>";
+								echo"</div>";
 											// data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'
 											//Add social media here
 											$url = currentPageURL();
@@ -143,6 +128,7 @@ get_header(); ?>
 											}
 											
 										}
+									}
 							}
  
 			?>

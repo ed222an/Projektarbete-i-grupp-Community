@@ -48,12 +48,18 @@ get_header(); ?>
 					<div class="entry-content">
 						<?php 
 							the_content();
-						//$user = isset($_POST['searchUser']) ? $_POST['searchUser'] : "";				
-						$user = $_GET['user'];
+						if(empty($_GET['user'])){
+							$user = isset($_POST['user']) ? $_POST['user'] : "";
+						}
+						else{
+							$user = $_GET['user'];
+						}
+										
+						//$user = $_GET['user'];
 						global $current_user;
 						global $wpdb;
 						get_currentuserinfo(); 
-	
+						
 						$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user'");
 						$id = $wpdb->get_results( "SELECT * FROM wp_users WHERE display_name = '$user'");
 						echo "<h2>$user</h2>";
@@ -65,15 +71,17 @@ get_header(); ?>
 						echo "<h2>Achievements</h2>";
 						foreach($result as $row)
 						{
+							$desc = $wpdb->get_results( "SELECT description FROM wp_achievementlist WHERE name = '$row->achievement'");
+							foreach($desc as $descRow){
+							
 							$status = "In Progress";
 							if($row->achievementIsDone == 1){
 								$status = "Done";
 								echo "<div class='boxDone'>";
 								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
-								$row->achievementCompleteDate . "</div> <div class='achiShare'><a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=43&user=$current_user->user_login" . 
-								"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "</div>";
+								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								$row->achievementCompleteDate . "</div>";
 								echo"</div>";
 							}
 							if($row->achievementIsDone == 0)
@@ -81,9 +89,10 @@ get_header(); ?>
 								echo "<div class='boxNotDone'>";
 								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
 								echo"</div>";
+							}
 							}							
 						}
 						$userResult = $wpdb->get_results( "SELECT * FROM wp_stats WHERE Username = '$user'");
@@ -98,7 +107,14 @@ get_header(); ?>
 								//Visar den inloggade användarens stats
 								echo $statName . " ".$row->statCount . "<br>";
 								
-							 }	
+							 }
+					echo "</div><br>";
+
+					echo "Search for a user";
+					echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+						<input name='user' type='text' value=''/>
+						<input type='submit' value='Search'>
+					</form>";
 						
 						
 						

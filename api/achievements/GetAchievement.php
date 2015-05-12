@@ -28,7 +28,13 @@
 			$query -> execute($params);
 			$result = $query -> fetch();
 			
-			$json = array("status" => 1, "name" => $result['achievement'], "is done" => $result['achievementIsDone'], "username" => $result['username']);
+			$sql = "SELECT description FROM wp_achievementlist WHERE name = ?";
+			$params = array($achievementName);
+			$query = $dbh -> prepare($sql);
+			$query -> execute($params);
+			$resultDesc = $query -> fetch();
+			
+			$json = array("status" => 1, "name" => $result['achievement'], "is done" => $result['achievementIsDone'], "username" => $result['username'], "description" => $resultDesc['description']);
 		}else{
 			$json = array("status" => 0, "msg" => "Username and or achievement does not exist");
 		}	
@@ -49,8 +55,19 @@
 		foreach($result as $rec){     
 			$json_array['username']=$rec['username'];  
 			$json_array['achievementIsDone']=$rec['achievementIsDone'];
-			$json_array['achievement']=$rec['achievement']; 			
- 
+			$json_array['achievement']=$rec['achievement'];
+
+			$sql = "SELECT description FROM wp_achievementlist WHERE name = ?";
+			$params = array($rec['achievement']);
+			$query = $dbh -> prepare($sql);
+			$query -> execute($params);
+			$resultDesc = $query -> fetch();
+			
+			$json_array['description']=$resultDesc['description'];
+
+			
+			
+			
 			array_push($json_data,$json_array);  
 		}  
 		$json = $json_data;		
@@ -78,7 +95,16 @@
 		{     
 			$json_array['username']=$rec['username'];  
 			$json_array['achievementIsDone']=$rec['achievementIsDone'];
-			$json_array['achievement']=$rec['achievement']; 			
+			$json_array['achievement']=$rec['achievement'];
+
+
+			$sql = "SELECT description FROM wp_achievementlist WHERE name = ?";
+			$params = array($rec['achievement']);
+			$query = $dbh -> prepare($sql);
+			$query -> execute($params);
+			$resultDesc = $query -> fetch();
+			
+			$json_array['description']=$resultDesc['description'];
 
 			array_push($json_data,$json_array);  
 		}  
