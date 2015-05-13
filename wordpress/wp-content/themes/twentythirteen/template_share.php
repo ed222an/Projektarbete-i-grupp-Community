@@ -15,6 +15,22 @@ Template Name: share
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
+global $current_user;
+global $wpdb;
+get_currentuserinfo();
+
+//Gets the user and achievement parameters
+$user = $_GET['user'];
+$achievement = $_GET['achievement'];
+
+//Gets the specific achievement
+$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$user' AND achievement = '$achievement'");
+
+foreach($result as $row){
+	if($row->achievementIsDone == 0){
+		 header("Location: http://127.0.0.1/Projektarbeteigrupp/?page_id=10");
+	}
+}
 
 get_header(); ?>
 
