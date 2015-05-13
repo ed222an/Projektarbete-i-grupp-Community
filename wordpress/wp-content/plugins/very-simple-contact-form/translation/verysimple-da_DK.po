@@ -1,0 +1,214 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Very Simple Contact Form v3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-03-23 23:03:17+0000\n"
+"Last-Translator: B. Kolding\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: vscf_main.php:11
+#: vscf_widget_form.php:11
+#@ verysimple
+msgid "Name"
+msgstr "Navn"
+
+#: vscf_main.php:12
+#: vscf_widget_form.php:12
+#@ verysimple
+msgid "Email"
+msgstr "E-mail"
+
+#: vscf_main.php:13
+#: vscf_widget_form.php:13
+#@ verysimple
+msgid "Subject"
+msgstr "Emne"
+
+#: vscf_main.php:14
+#: vscf_widget_form.php:14
+#@ verysimple
+msgid "Message"
+msgstr "Meddelelse"
+
+#: vscf_main.php:16
+#: vscf_widget_form.php:16
+#@ verysimple
+msgid "Submit"
+msgstr "Send"
+
+#: vscf_main.php:17
+#: vscf_widget_form.php:17
+#@ verysimple
+msgid "Please fill in all the required fields"
+msgstr "Udfyld alle krævede felter"
+
+#: vscf_main.php:18
+#: vscf_main.php:19
+#: vscf_widget_form.php:18
+#: vscf_widget_form.php:19
+#@ verysimple
+msgid "Please enter at least 2 characters"
+msgstr "Skriv mindst 2 karakterer"
+
+#: vscf_main.php:20
+#: vscf_widget_form.php:20
+#@ verysimple
+msgid "Please enter at least 10 characters"
+msgstr "Skriv mindst 10 karakterer"
+
+#: vscf_main.php:22
+#: vscf_widget_form.php:22
+#@ verysimple
+msgid "Please enter a valid email"
+msgstr "Skriv en gyldig e-mail adresse"
+
+#: vscf_main.php:23
+#: vscf_widget_form.php:23
+#@ verysimple
+msgid "Thanks for your message! I will contact you as soon as I can."
+msgstr "Tak for din mail. Jeg vender tilbage så snart som muligt."
+
+#. translators: plugin header field 'Name'
+#: vscf_settings.php:0
+#: vscf_settings.php:109
+#: vscf_widget.php:8
+#: vscf_widget.php:41
+#@ verysimple
+msgid "Very Simple Contact Form"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: vscf_settings.php:0
+#@ verysimple
+msgid "This is a very simple contact form. Use shortcode [contact] to display form on page or use the widget. For more info please check readme file."
+msgstr "Dette er en enkel kontakt formular. Brug 'shortcode' [contact] for at vise formularen på siden eller bruge widget. Mere info i readme filen."
+
+#. translators: plugin header field 'Author'
+#: vscf_settings.php:0
+#@ verysimple
+msgid "Guido van der Leest"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: vscf_settings.php:0
+#@ verysimple
+msgid "http://www.guidovanderleest.nl"
+msgstr ""
+
+#: vscf_main.php:15
+#: vscf_widget_form.php:15
+#@ verysimple
+msgid "Fill in number"
+msgstr "Udfylde nummer"
+
+#: vscf_main.php:21
+#: vscf_widget_form.php:21
+#@ verysimple
+msgid "Please fill in the correct number"
+msgstr "Udfyld venligst det rigtige nummer"
+
+#: vscf_widget.php:7
+#@ verysimple
+msgid "Very Simple Contact Form sidebar widget"
+msgstr ""
+
+#: vscf_widget.php:45
+#@ verysimple
+msgid "Widget Title:"
+msgstr "Widget titel:"
+
+#: vscf_settings.php:79
+#@ verysimple
+msgid "VSCF Custom Style"
+msgstr "VSCF Custom Stil"
+
+#: vscf_settings.php:87
+#@ verysimple
+msgid "Description"
+msgstr "Beskrivelser"
+
+#: vscf_settings.php:88
+#@ verysimple
+msgid "Custom Style"
+msgstr "Custom Stil"
+
+#: vscf_settings.php:94
+#@ verysimple
+msgid "On this page you can add Custom Style (CSS) to change the layout of your Very Simple Contact Form."
+msgstr "På denne side kan du tilføje Custom Stil (CSS) for at ændre layoutet på din Very Simple Contact Form."
+
+#: vscf_settings.php:113
+#@ verysimple
+msgid "Save Style"
+msgstr "Gem Stil"
+
+#: vscf_settings.php:119
+#@ verysimple
+msgid "Field label"
+msgstr "Felt label"
+
+#: vscf_settings.php:121
+#@ verysimple
+msgid "All fields"
+msgstr "Alle felter"
+
+#: vscf_settings.php:123
+#@ verysimple
+msgid "Fields by name"
+msgstr "Felter efter navn"
+
+#: vscf_settings.php:126
+#@ verysimple
+msgid "Submit button"
+msgstr "Send-knappen"
+
+#: vscf_settings.php:131
+#@ verysimple
+msgid "Field error"
+msgstr "Felt fejl"
+
+#: vscf_settings.php:133
+#@ verysimple
+msgid "Error and Thank You message"
+msgstr "Fejl og Tak besked"
+
+#: vscf_settings.php:136
+#@ verysimple
+msgid "Widget"
+msgstr "Widget"
+
+#: vscf_settings.php:138
+#@ verysimple
+msgid "Plugin Stylesheet"
+msgstr "Plugin Stil"
+
+#: vscf_settings.php:139
+#@ verysimple
+msgid "For Default Style"
+msgstr "For Standard Stil"
+
+#: vscf_settings.php:139
+#@ verysimple
+msgid "Click Here"
+msgstr "Klik Her"
+
+#. translators: plugin header field 'Version'
+#: vscf_settings.php:0
+#@ verysimple
+msgid "3.2"
+msgstr ""
+
