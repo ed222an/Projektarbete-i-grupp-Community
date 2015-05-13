@@ -46,8 +46,19 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<?php
+						
+							if ( wp_is_mobile() ) {
+								/* Display and echo mobile specific stuff here */
+								echo "Warning this is a mobile device and the files may not work as expected, try to use an device who is supporting .rar and .exe files";
+								//css ifrån http://buttonoptimizer.com/
+								echo "<a class='button1' href='http://www.github.com/ed222an/Projektarbete-i-grupp-Spel/blob/master/Demosidan/Builds/DemoBuild13.rar?raw=true'>Download Three Angry Dwarves Game</a>";
+							}
+							else
+							{
+
 							//css ifrån http://buttonoptimizer.com/
 							echo "<a class='button1' href='http://www.github.com/ed222an/Projektarbete-i-grupp-Spel/blob/master/Demosidan/Builds/DemoBuild13.rar?raw=true'>Download Three Angry Dwarves Game</a>";
+							}
 
 						?>
 						<?php the_content(); ?>
