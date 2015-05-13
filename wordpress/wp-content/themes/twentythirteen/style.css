@@ -150,9 +150,17 @@ slideRight
 	margin-right: auto;
 }
 #navigation{
-padding-right:6%;
+margin-left: auto;
+  margin-right: auto;
+  text-align: initial;
+  padding-left: 5%;
+}
+#tutorialContent{
+	width: 90%;
+	text-align: initial;
 	margin-left: auto;
 	margin-right: auto;
+	background-color:#FFD839;
 }
 
 .boxDone{

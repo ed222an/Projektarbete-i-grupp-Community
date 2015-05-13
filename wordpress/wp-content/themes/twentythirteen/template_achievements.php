@@ -106,15 +106,8 @@ get_header(); ?>
 						<input type='submit' value='Search'>
 					</form>";
 					
+					echo "<a href='http://127.0.0.1/Projektarbeteigrupp/user/?showAll'>Show all members</a>";
 					
-					$result = $wpdb->get_results( "SELECT display_name FROM wp_users ORDER BY display_name ASC");
-					
-						foreach($result as $row)
-						{
-							if($row){
-								echo "<a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=76&user=". $row->display_name ."'>$row->display_name</a><br>";
-							}
-						}
 					?>
 					
 					
