@@ -23,7 +23,7 @@
 #bbpress-forums div.even,
 #bbpress-forums ul.even {
 	background-color: #FFE064;
-	margin-bottom:1%;
+    border-bottom: 1px solid #FFA200;
 	-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
 	-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
 	box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
@@ -32,6 +32,7 @@
 #bbpress-forums div.odd,
 #bbpress-forums ul.odd {
 	background-color: #FFE064;
+	border-bottom: 1px solid #FFA200;
 }
 
 body.reply-edit .reply {
