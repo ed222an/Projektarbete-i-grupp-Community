@@ -97,7 +97,9 @@ slideRight
 ==============================================
 */
 
-
+.achiBox{
+	text-align:center;
+}
 
 @keyframes slideRight {
 	0% {
@@ -3248,6 +3250,16 @@ footer.entry-meta {
 		font-size: 30px;
 	}
 
+	.achiName{
+		font-size:20px;
+	}
+	
+	.statColumn{
+		font-size: 18px;
+		font-weight: normal;
+	}
+	
+	
 	#content .entry-header,
 	#content .entry-content,
 	#content .entry-summary,
@@ -3372,7 +3384,7 @@ footer.entry-meta {
 	.format-image .entry-title,
 	.format-gallery .entry-title,
 	.format-video .entry-title {
-		font-size: 22px;
+		font-size: 25px;
 		font-weight: bold;
 	}
 

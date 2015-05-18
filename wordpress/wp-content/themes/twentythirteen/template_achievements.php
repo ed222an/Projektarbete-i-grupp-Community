@@ -27,6 +27,8 @@ get_header(); ?>
 						<?php endif; ?>
 						<h1 class="entry-title"><?php the_title();?></h1>
 						<div class="entry-title">
+						</div>
+						<div class="achiBox">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 					
@@ -111,8 +113,8 @@ get_header(); ?>
 					?>
 					
 					
-					
 					</div>
+					
 					</header><!-- .entry-header -->
 
 	<div id="primary" class="content-area">
