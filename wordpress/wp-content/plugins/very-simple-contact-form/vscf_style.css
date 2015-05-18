@@ -1,13 +1,30 @@
 /* Very Simple Contact Form */
-#vscf {clear:both;}
+#vscf {
+clear:both;
+
+}
+
+.vscf{
+	
+	width:40%;
+	background: #FFA200;
+	background: -webkit-linear-gradient(#FFA200, #FFD839);
+	background:    -moz-linear-gradient(#FFA200, #FFD839);
+	background:         linear-gradient(#FFA200, #FFD839);
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:1%;
+	padding-top:1%;
+
+}
 #vscf p {margin:0 0 10px;}
 
 
 /* Label and Input fields */
 #vscf label {font-size:1em; text-transform:none; font-weight:normal;}
 #vscf input, #vscf textarea {font-size:1em; -webkit-appearance:none; -moz-appearance:none;}
-#vscf_name, #vscf_email, #vscf_subject, #vscf_sum, #vscf_firstname, #vscf_lastname {width:50%;}
-#vscf_message {width:50%;}
+#vscf_name, #vscf_email, #vscf_subject, #vscf_sum, #vscf_firstname, #vscf_lastname {width:80%;}
+#vscf_message {width:80%;}
 
 
 /* Hide the 2 fake Honeypot fields */
