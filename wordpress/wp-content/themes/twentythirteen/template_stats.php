@@ -26,7 +26,13 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-						
+						<!--
+						<div class="card-container">
+						  <div class="card">
+							<div class="side"><img src="wp-includes/images/statspic.png" alt="Five Angry Dwarves"></div>
+							<div class="side back">Five Angry Dwarves</div>
+						  </div>
+						</div> -->
 						<h1 class="entry-title">
 						<?php the_title(); ?></h1>
 							<div class="entry-title">
@@ -55,15 +61,19 @@ get_header(); ?>
 					wp_login_form();
 					}else{
 						if(!empty($userResult)){
-							echo "<div class='statColumn'><h2>Your stats</h2><br>";
+							echo "<div class='statColumn'><h2>Your stats</h2>";
+						
 							foreach($userResult as $row)
 							 {
 								 //Gör så att första bokstaven blir stor i statName
 								$statName = ucfirst($row->statName);
 								//Visar den inloggade användarens stats
+
+								
 								echo $statName . " ".$row->statCount . "<br>";
 								
 							 }
+							 
 							 foreach($KillsKDR as $row){
 								$kills = $row->statCount;
 								foreach($DeathsKDR as $row2){
