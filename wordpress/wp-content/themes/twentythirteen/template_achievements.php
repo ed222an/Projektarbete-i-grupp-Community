@@ -62,7 +62,7 @@ get_header(); ?>
 						
 						foreach($result as $row)
 						{
-							$desc = $wpdb->get_results( "SELECT description FROM wp_achievementlist WHERE name = '$row->achievement'");
+							$desc = $wpdb->get_results( "SELECT description,imgpath FROM wp_achievementlist WHERE name = '$row->achievement'");
 							foreach($desc as $descRow){
 
 							$status = "In Progress";
@@ -71,17 +71,18 @@ get_header(); ?>
 								echo "<div class='boxDone'>";
 								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div> <div class='achiShare'><a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=43&user=$current_user->user_login" . 
 								"&" . "achievement=$row->achievement' class='shareLink'>Share</a>" . "</div>";
 								echo"</div>";
 							}
 							if($row->achievementIsDone == 0)
 							{
+								
 								echo "<div class='boxNotDone'>";
-								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
+								echo "<img src='". $descRow->imgpath ."' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
-								echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+								echo "<div class='achiName'>" . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
 								echo"</div>";
 							}
