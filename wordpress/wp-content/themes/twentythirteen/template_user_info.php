@@ -87,13 +87,18 @@ get_header(); ?>
 						}
 						
 						else{
-
-							echo "<h2>$user</h2>";
+							echo "<div id='userContent'>";
+							
 							//Hårdkodat
 							foreach($id as $row){
-								echo get_avatar( $row->ID, 128 );
+								echo "<div id='avatar'>";
+								echo "<h2>$user</h2>";
+									echo get_avatar( $row->ID, 128 );
+								echo "</div>";
 							}
 							
+							//echo "<h2>Achievements</h2>";
+							echo "<div id='userAchievements'>";
 							echo "<h2>Achievements</h2>";
 							foreach($result as $row)
 							{
@@ -106,7 +111,7 @@ get_header(); ?>
 									echo "<div class='boxDone'>";
 									echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 									echo $row->achievementCompletedDate;
-									echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+									echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 									$row->achievementCompleteDate . "</div>";
 									echo"</div>";
 								}
@@ -115,16 +120,17 @@ get_header(); ?>
 									echo "<div class='boxNotDone'>";
 									echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
 									echo $row->achievementCompletedDate;
-									echo "<div class='achiName'>Achivement name: " . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
+									echo "<div class='achiName'>" . $row->achievement . "</div>" . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 									$row->achievementCompleteDate . "</div>";
 									echo"</div>";
 								}
 								}							
 							}
+							echo "</div>";
 							$userResult = $wpdb->get_results( "SELECT * FROM wp_stats WHERE Username = '$user'");
 							//echo "<h2>Stats</h2>";
 								
-								
+							echo "<div id='userStats'>";	
 							echo "<div class='statColumn'><h2>$user stats</h2><br>";
 								foreach($userResult as $row)
 								 {
@@ -134,15 +140,17 @@ get_header(); ?>
 									echo $statName . " ".$row->statCount . "<br>";
 									
 								 }
+							echo "</div>";
 						echo "</div><br>";
-
-						echo "Search for a user";
-						echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
-							<input name='user' type='text' value=''/>
-							<input type='submit' value='Search'>
-						</form>";
-							
 						
+						echo "<div id='searchForm'>";
+							echo "Search for a user";
+							echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+								<input name='user' type='text' value=''/>
+								<input type='submit' value='Search'>
+							</form>";
+						echo "</div>";	
+						echo "</div>";
 						}	
 						?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>

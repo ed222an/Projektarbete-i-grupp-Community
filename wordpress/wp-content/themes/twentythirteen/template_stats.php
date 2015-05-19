@@ -50,6 +50,8 @@ get_header(); ?>
 						$userResult = $wpdb->get_results( "SELECT * FROM wp_stats WHERE Username = '$current_user->user_login'");
 						$topResultKills = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'kills' ORDER BY statCount DESC LIMIT 10");
 						$topResultDeaths = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'deaths' ORDER BY statCount DESC LIMIT 10");
+						$topResultLevel = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'max level' ORDER BY statCount DESC LIMIT 10");
+						$topResultTime = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'time' ORDER BY statCount DESC LIMIT 10");
 						
 						$KillsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'kills'");
 						$DeathsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'deaths'");
@@ -96,19 +98,27 @@ get_header(); ?>
 					
 							echo "<div class='statColumn'><h2>Top 10 killers</h2><br>";
 								foreach($topResultKills as $row){
-									echo $row->username . " got " . " ".$row->statCount . " kills<br>";
+									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> got " . " ".$row->statCount . " kills<br>";
 								}
 							echo "</div>";
 							
 							echo "<div class='statColumn'><h2>Top 10 most killed</h2><br>";
 								foreach($topResultDeaths as $row){
-									echo $row->username . " have died " . " ".$row->statCount . " times<br>";
+									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> have died " . " ".$row->statCount . " times<br>";
 								}
 							echo "</div>";
 							
-							echo "<div class='statColumn'><h2>Top 10 highest level</h2><br></div>";
-							echo "<div class='statColumn'><h2>Top 10 longest playtime</h2><br></div>";
-		 
+							echo "<div class='statColumn'><h2>Top 10 highest level</h2><br>";
+								foreach($topResultLevel as $row){
+									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> is level " . " ".$row->statCount . "<br>";
+								}
+							echo "</div>";
+							
+							echo "<div class='statColumn'><h2>Top 10 longest playtime</h2><br>";
+								foreach($topResultTime as $row){
+									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> have played " . " ".$row->statCount . " minutes<br>";
+								}
+							echo "</div>";
 					?>
 					</div>
 					<div class="fb-like" data-href="http://127.0.0.1/Projektarbeteigrupp/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
