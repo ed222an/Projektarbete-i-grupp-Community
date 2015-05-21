@@ -110,11 +110,11 @@ get_header(); ?>
 												 $status = "Done";
 											}
 								
-							$desc = $wpdb->get_results( "SELECT description FROM wp_achievementlist WHERE name = '$row->achievement'");
+							$desc = $wpdb->get_results( "SELECT description,imgpath FROM wp_achievementlist WHERE name = '$row->achievement'");
 							foreach($desc as $descRow){		
 								
 								echo "<div class='boxDone'>";
-								echo "<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRah4V-2abPr1pIqhEvGG9d3_qpc_4n4FR9CjXAnHYTQpPb9He' alt='test' height='100' width='100'>";
+								echo "<img src='". $descRow->imgpath ."' alt='test' height='100' width='100'>";
 								echo $row->achievementCompletedDate;
 								echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
