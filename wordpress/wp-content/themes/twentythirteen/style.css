@@ -96,6 +96,18 @@ audio:not([controls]) {
 slideRight
 ==============================================
 */
+.userInList{
+	color:black;
+}
+#userList{
+	background-color: #FFA200;
+  border-radius: 1%;
+  margin-top: 2%;
+  padding: 1%;
+  width:340px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 .achiBox{
 	text-align:center;

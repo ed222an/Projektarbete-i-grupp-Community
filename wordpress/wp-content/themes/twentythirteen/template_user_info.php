@@ -56,34 +56,55 @@ get_header(); ?>
 						if(isset($_GET['showAll'])){
 							$result = $wpdb->get_results( "SELECT display_name FROM wp_users ORDER BY display_name ASC");
 							
-							echo "<br>Search for a user";
+							echo "<div class='searchUser'>Search for a user";
 							echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
 								<input name='user' type='text' value=''/>
 								<input type='submit' value='Search'>
 							</form>";
+					
+						echo "</div>";
+						echo "<div id='userList'>";
+						$firstChar = "";
+						$currentChar = "";
 							foreach($result as $row)
 							{
+								$firstChar = strtoupper($row->display_name[0]);
+								
+								if($currentChar != $firstChar){
+									$currentChar = $firstChar;
+									echo $firstChar;
+								}
+								
+								
 								if($row){
+									
+									echo "<div class='userInList'>";
 									echo "<a href='http://127.0.0.1/Projektarbeteigrupp/?page_id=76&user=". $row->display_name ."'>$row->display_name</a><br>";
+									echo "</div>";
 								}
 							}
+							echo "</div>";
 						}
 						elseif(empty($id) && !isset($_GET['user'])){	
 							
-							echo "<br>Search for a user";
+							echo "<div class='searchUser'>Search for a user";
 							echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
 								<input name='user' type='text' value=''/>
 								<input type='submit' value='Search'>
 							</form>";
+					
+					echo "<a href='http://127.0.0.1/Projektarbeteigrupp/user/?showAll'>Show all members</a></div>";
 						}
 						elseif(empty($id) && isset($_GET['user'])){
 							echo "User not found";
 								
-							echo "<br>Search for a user";
-							echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
-								<input name='user' type='text' value=''/>
-								<input type='submit' value='Search'>
-							</form>";
+						echo "<div class='searchUser'>Search for a user";
+						echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+							<input name='user' type='text' value=''/>
+							<input type='submit' value='Search'>
+						</form>";
+					
+					echo "<a href='http://127.0.0.1/Projektarbeteigrupp/user/?showAll'>Show all members</a></div>";
 						}
 						
 						else{
