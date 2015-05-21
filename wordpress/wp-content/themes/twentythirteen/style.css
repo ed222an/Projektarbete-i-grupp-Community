@@ -3233,6 +3233,84 @@ footer.entry-meta {
 
 /* Collapse oversized image and pulled images after iPad breakpoint. */
 @media (max-width: 767px) {
+
+
+.boxDone{
+		width:340px;
+	height:10%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFD839;
+	padding:1%;
+	margin-bottom:2%;
+	overflow:hidden;
+	border-radius:5px;
+	position: relative;
+	-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+	box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+.boxNotDone{
+		width:340px;
+	height:10%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFD839;
+	padding:1%;
+	margin-bottom:2%;
+	overflow:hidden;
+	border-radius:5px;
+	position: relative;
+	-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+	box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+	.statColumn{
+display: inline-table;
+  width: 340px;
+  background-color:#FFA200;
+  /*border-radius: 5px;
+  border-style: outset;*/
+  height: 400px;
+ transition: background-color 2s ease;
+ 
+ 	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;	
+	}
+
+
 	.site-header .home-link {
 		min-height: 0;
 	}
