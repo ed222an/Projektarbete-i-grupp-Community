@@ -119,8 +119,16 @@ get_header(); ?>
 									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> have played " . " ".$row->statCount . " minutes<br>";
 								}
 							echo "</div>";
+							echo "</div>";
+					echo "<div class='searchUser'>Search for a user";
+					echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+						<input name='user' type='text' value=''/>
+						<input type='submit' value='Search'>
+					</form>";
+					
+					echo "<a href='http://127.0.0.1/Projektarbeteigrupp/user/?showAll'>Show all members</a></div>";
 					?>
-					</div>
+					
 					<div class="fb-like" data-href="http://127.0.0.1/Projektarbeteigrupp/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
 					</header><!-- .entry-header -->
 

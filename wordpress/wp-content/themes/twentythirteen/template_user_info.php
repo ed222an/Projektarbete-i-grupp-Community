@@ -143,13 +143,13 @@ get_header(); ?>
 							echo "</div>";
 						echo "</div><br>";
 						
-						echo "<div id='searchForm'>";
-							echo "Search for a user";
-							echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
-								<input name='user' type='text' value=''/>
-								<input type='submit' value='Search'>
-							</form>";
-						echo "</div>";	
+					echo "<div class='searchUser'>Search for a user";
+					echo "<form action='http://127.0.0.1/Projektarbeteigrupp/user/' method='GET'>
+						<input name='user' type='text' value=''/>
+						<input type='submit' value='Search'>
+					</form>";
+					
+					echo "<a href='http://127.0.0.1/Projektarbeteigrupp/user/?showAll'>Show all members</a></div>";	
 						echo "</div>";
 						}	
 						?>

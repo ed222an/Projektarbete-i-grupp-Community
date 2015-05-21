@@ -101,6 +101,16 @@ slideRight
 	text-align:center;
 }
 
+.searchUser{
+background-color: #FFA200;
+  padding: 2%;
+  border-radius: 5px;
+  width:340px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
 @keyframes slideRight {
 	0% {
 		transform: translateX(-150%);
@@ -3458,7 +3468,7 @@ footer.entry-meta {
 @media (max-width: 361px) {
 
 .boxDone{
-		width:350px;
+		width:340px;
 	height:10%;
 	margin-left:auto;
 	margin-right:auto;
@@ -3485,7 +3495,7 @@ footer.entry-meta {
 }
 
 .boxNotDone{
-		width:350px;
+		width:340px;
 	height:10%;
 	margin-left:auto;
 	margin-right:auto;
@@ -3513,7 +3523,7 @@ footer.entry-meta {
 
 	.statColumn{
 display: inline-table;
-  width: 350px;
+  width: 340px;
   background-color:#FFA200;
   /*border-radius: 5px;
   border-style: outset;*/
