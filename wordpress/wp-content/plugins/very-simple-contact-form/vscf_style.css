@@ -43,3 +43,35 @@ clear:both;
 
 /* Widget */
 .vscf_sidebar {}
+
+@media (max-width: 361px) {
+	.vscf{
+	width:340px;
+	background: #FFA200;
+	background: -webkit-linear-gradient(#FFA200, #FFD839);
+	background:    -moz-linear-gradient(#FFA200, #FFD839);
+	background:         linear-gradient(#FFA200, #FFD839);
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:1%;
+	padding-top:1%;
+
+}
+}
+
+@media (max-width: 321px) {
+	.vscf{
+	width:300px;
+	background: #FFA200;
+	background: -webkit-linear-gradient(#FFA200, #FFD839);
+	background:    -moz-linear-gradient(#FFA200, #FFD839);
+	background:         linear-gradient(#FFA200, #FFD839);
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:1%;
+	padding-top:1%;
+
+}
+
+
+}
