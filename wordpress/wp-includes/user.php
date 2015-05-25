@@ -5,7 +5,7 @@
  * @package WordPress
  * @subpackage Users
  */
-
+require_once("../api/achievements/confi.php");
 /**
  * Authenticate user with remember capability.
  *
@@ -1937,11 +1937,11 @@ function wp_insert_user( $userdata ) {
 		do_action( 'user_register', $user_id );
 	}
 
-	// $wpdb->insert("INSERT INTO test_achievementisdone ('username', 'isDone', 'name')
-									// VALUES ('$user_login', 0, '10 kills')");
-							
+
+
+	
 	//Hämtar alla achievementnamn						
-	$result = $wpdb->get_results("SELECT * FROM wp_achievementList");
+	$result = $wpdb->get_results("SELECT * FROM wp_achievementlist");
 
 	//Loopar igenom alla namn och skapar en rad i databasen för varje namn som finns
 	foreach($result as $value){
@@ -1960,22 +1960,6 @@ function wp_insert_user( $userdata ) {
 				) 
 			);
 	}
-									
-	// $wpdb->insert( 
-	// 'wp_achievements', 
-	// array( 
-		// 'username' => $user_login, 
-		// 'achievementIsDone' => 0,
-		// 'achievement' => '10 kills'
-
-	// ), 
-	// array( 
-		// '%s', 
-		// '%d',
-		// '%s'
-		
-	// ) 
-// );
 
 	return $user_id;
 }
