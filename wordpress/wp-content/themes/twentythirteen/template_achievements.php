@@ -48,7 +48,8 @@ get_header(); ?>
 					echo "You need to login to see your achievements!";
 					
 					//Visar ett loginformulär om ingen användare är inloggad
-					wp_login_form();
+					//wp_login_form();
+					echo "<br><a href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a>";
 				}
 				else{
 					$single = "'";

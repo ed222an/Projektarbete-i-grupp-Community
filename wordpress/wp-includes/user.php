@@ -5,7 +5,6 @@
  * @package WordPress
  * @subpackage Users
  */
-require_once("../api/achievements/confi.php");
 /**
  * Authenticate user with remember capability.
  *

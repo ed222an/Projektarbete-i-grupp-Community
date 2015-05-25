@@ -60,7 +60,8 @@ get_header(); ?>
 						echo "You need to login to see your own stats!";
 					
 					//Visar ett loginformulär om ingen användare är inloggad
-					wp_login_form();
+					//wp_login_form();
+					echo "<br><a href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a><br>";
 					}else{
 						if(!empty($userResult)){
 							echo "<div class='statColumn'><h2>Your stats</h2>";
@@ -90,8 +91,9 @@ get_header(); ?>
 							 
  
 						}else{
-							echo "You need to play the game to get stats!";
-							echo "</div>";
+							
+							echo "You need to play the game to get stats!<br>";
+
 						}
 
 					}
