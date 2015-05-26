@@ -1406,6 +1406,13 @@ ul.nav-menu .focus > ul,
 
 .hentry {
 	padding: 40px 0;
+	
+}
+
+.hentry p {
+	padding: 40px 0;
+	text-align:center;
+	
 }
 
 .entry-header,
