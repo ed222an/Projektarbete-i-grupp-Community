@@ -26,21 +26,12 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-						<!--
-						<div class="card-container">
-						  <div class="card">
-							<div class="side"><img src="wp-includes/images/statspic.png" alt="Five Angry Dwarves"></div>
-							<div class="side back">Five Angry Dwarves</div>
-						  </div>
-						</div> -->
 						<h1 class="entry-title">
 						<?php the_title(); ?></h1>
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-					
-					
-					
+
 					<?php 
 					
 					global $current_user;
@@ -91,13 +82,9 @@ get_header(); ?>
 							 
  
 						}else{
-							
 							echo "You need to play the game to get stats!<br>";
-
 						}
-
 					}
-					
 							echo "<div class='statColumn'><h2>Top 10 killers</h2><br>";
 								foreach($topResultKills as $row){
 									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> got " . " ".$row->statCount . " kills<br>";

@@ -47,10 +47,6 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-		
-						
-						
-					
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 					</div><!-- .entry-content -->
@@ -60,7 +56,7 @@ get_header(); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post -->
 
-				<!--<?php comments_template(); ?>-->
+				
 			<?php endwhile; ?>
 
 		</div><!-- #content -->

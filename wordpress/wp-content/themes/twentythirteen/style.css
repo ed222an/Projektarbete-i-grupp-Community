@@ -191,7 +191,6 @@ margin-left: auto;
 	margin-left: auto;
 	margin-right: auto;
 	background-color:#FFD839;
-	border-radius:0.5%;
 	padding:1%;
 	-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
 	-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
@@ -247,6 +246,12 @@ margin-left: auto;
     background-size: 100% 100%;
 }
 
+
+#userAchievements img{
+		width:100px;
+	height:100px;
+}
+
 .boxDone{
 	width:500px;
 	height:10%;
@@ -273,6 +278,7 @@ margin-left: auto;
 
 	visibility: visible !important;	
 }
+
 .boxNotDone{
 	width:500px;
 	height:10%;
@@ -1454,7 +1460,6 @@ ul.nav-menu .focus > ul,
 	color: #ea9629;
 }
 
-
 /**
  * 5.2 Entry Meta
  * ----------------------------------------------------------------------------
@@ -2583,9 +2588,6 @@ footer.entry-meta {
 	list-style-type: none;
   padding: 1%;
   background-color: #FFE064;
-  /* border-radius: 5px; */
-  border-bottom-left-radius: 1%;
-  border-bottom-right-radius: 1%;
   	-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
 	-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
 	box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
