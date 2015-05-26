@@ -1,5 +1,6 @@
 <?php
 	include_once('confi.php');
+	include_once('PasswordHash.php');
 	
 	//Get database connection
 	$conn = new connection();
