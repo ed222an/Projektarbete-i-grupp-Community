@@ -28,6 +28,8 @@ get_header(); ?>
 						<?php endif; ?>
 						<h1 class="entry-title">
 						<?php the_title(); ?></h1>
+						<?php echo "<p class='center'>You need to login to see your own stats!<br>";
+						echo "<a  href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a></p>"; ?>
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -48,11 +50,11 @@ get_header(); ?>
 						$DeathsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'deaths'");
 
 					if(empty($current_user->user_login)){
-						echo "You need to login to see your own stats!";
+						
 					
 					//Visar ett loginformulär om ingen användare är inloggad
 					//wp_login_form();
-					echo "<br><a href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a><br>";
+					
 					}else{
 						if(!empty($userResult)){
 							echo "<div class='statColumn'><h2>Your stats</h2>";
