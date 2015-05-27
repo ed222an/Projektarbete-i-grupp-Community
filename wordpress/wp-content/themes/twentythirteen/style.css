@@ -172,10 +172,12 @@ background-color: #FFA200;
 #gettingStarted{
 	margin-left: auto;
 	margin-right: auto;
+	text-align: left;
 }
 #controls{
 	margin-left: auto;
 	margin-right: auto;
+	text-align: left;
 }
 #navigation{
 margin-left: auto;
@@ -1410,7 +1412,6 @@ ul.nav-menu .focus > ul,
 }
 
 .hentry p {
-	padding: 40px 0;
 	text-align:center;
 	
 }
@@ -3367,7 +3368,7 @@ display: inline-table;
 	}
 
 	.achiName{
-		font-size:20px;
+		font-size:18px;
 	}
 	
 	.statColumn{

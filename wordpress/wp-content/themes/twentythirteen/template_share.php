@@ -135,7 +135,7 @@ get_header(); ?>
 													  data-via=''
 													  data-related=''
 													  data-hashtags=''
-													  data-text='Completed achievement $row->achievement on $row->achievementCompleteDate'>
+													  data-text='Completed achievement $row->achievement'>
 													Tweet
 													</a>";
 											}
@@ -157,7 +157,6 @@ get_header(); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post -->
 
-				<!--<?php comments_template(); ?>-->
 			<?php endwhile; ?>
 
 		</div><!-- #content -->
