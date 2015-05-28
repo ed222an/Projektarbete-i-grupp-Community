@@ -43,8 +43,8 @@ get_header(); ?>
 						$userResult = $wpdb->get_results( "SELECT * FROM wp_stats WHERE Username = '$current_user->user_login'");
 						$topResultKills = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'kills' ORDER BY statCount DESC LIMIT 10");
 						$topResultDeaths = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'deaths' ORDER BY statCount DESC LIMIT 10");
-						$topResultLevel = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'max level' ORDER BY statCount DESC LIMIT 10");
-						$topResultTime = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'time' ORDER BY statCount DESC LIMIT 10");
+						$topResultGold = $wpdb->get_results( "SELECT * FROM wp_stats WHERE statName = 'gold' ORDER BY statCount DESC LIMIT 10");
+						
 						
 						$KillsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'kills'");
 						$DeathsKDR = $wpdb->get_results( "SELECT statCount FROM wp_stats WHERE Username = '$current_user->user_login' AND statName = 'deaths'");
@@ -99,15 +99,11 @@ get_header(); ?>
 								}
 							echo "</div>";
 							
-							echo "<div class='statColumn'><h2>Top 10 highest level</h2><br>";
-								foreach($topResultLevel as $row){
-									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> is level " . " ".$row->statCount . "<br>";
-								}
-							echo "</div>";
 							
-							echo "<div class='statColumn'><h2>Top 10 longest playtime</h2><br>";
-								foreach($topResultTime as $row){
-									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> have played " . " ".$row->statCount . " minutes<br>";
+							
+							echo "<div class='statColumn'><h2>Top 10 most gold</h2><br>";
+								foreach($topResultGold as $row){
+									echo "<b><a href='http://127.0.0.1/Projektarbeteigrupp/user/?user=$row->username'>$row->username</a>" . "</b> collected " . " ".$row->statCount . " goldcoins<br>";
 								}
 							echo "</div>";
 							echo "</div>";
