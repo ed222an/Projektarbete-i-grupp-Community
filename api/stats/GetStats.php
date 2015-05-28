@@ -31,8 +31,44 @@
 			$json = array("status" => 0, "msg" => "Username and or statname does not exist");
 		}
 		
-	}else{
-		$json = array("status" => 0, "msg" => "Username and or stat name is empty");
+	}
+	else if(!empty($username))
+	{
+	    $sql = "SELECT * FROM wp_stats WHERE username= ?";
+		$params = array($username);
+		$query = $dbh -> prepare($sql);
+		$query -> execute($params);
+		$rows = $query -> fetchColumn();
+		
+			if($rows)
+		    {
+    			$sql = "SELECT * FROM wp_stats WHERE username= ?";
+    			$params = array($username);
+    			$query = $dbh -> prepare($sql);
+    			$query -> execute($params);
+    			$result = $query -> fetchAll();
+    			
+    			$json_data=array(); 
+		
+        		foreach($result as $rec)  
+        		{     
+        		  
+        			$json_array['statName']=$rec['statName'];
+        			$json_array['statCount']=$rec['statCount'];
+        			$json_array['username']=$rec['username'];
+        
+        			array_push($json_data,$json_array);  
+        		}  
+        		$json = $json_data;
+    
+    		
+		    }
+		    else{
+			    $json = array("status" => 0, "msg" => "Username and or statname does not exist");
+		    }
+	}
+	else{
+		$json = array("status" => 0, "msg" => "Username is empty");
 	}
 
 	/* Output header */
