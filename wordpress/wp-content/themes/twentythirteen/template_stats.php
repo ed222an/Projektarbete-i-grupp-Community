@@ -28,8 +28,15 @@ get_header(); ?>
 						<?php endif; ?>
 						<h1 class="entry-title">
 						<?php the_title(); ?></h1>
-						<?php echo "<p class='center'>You need to login to see your own stats!<br>";
-						echo "<a  href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a></p>"; ?>
+						<?php
+						global $current_user;
+						if(empty($current_user->user_login))
+						{
+							echo "<p class='center'>You need to login to see your own stats!<br>";
+							echo "<a  href='http://127.0.0.1/Projektarbeteigrupp/wp-login.php'>Log in</a></p>";
+						}						
+						?>
+						
 							<div class="entry-title">
 					<?php /* The loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
