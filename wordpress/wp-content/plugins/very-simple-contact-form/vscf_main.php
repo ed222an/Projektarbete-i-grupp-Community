@@ -15,9 +15,10 @@ function vscf_shortcode($vscf_atts) {
 		"label_sum"	 		=> __('Fill in number', 'verysimple') ,
 		"label_submit" 			=> __('Submit', 'verysimple') ,
 		"error_empty" 			=> __("Please fill in all the required fields", "verysimple"),
-		"error_form_name" 		=> __('Please enter at least 2 characters', 'verysimple') ,
-		"error_form_subject" 		=> __('Please enter at least 2 characters', 'verysimple') ,
-		"error_form_message" 		=> __('Please enter at least 10 characters', 'verysimple') ,
+		"error_toolong" 			=> __("Please enter less than 50 characters on subject and or name and max 1000 characters on message", "verysimple"),
+		"error_form_name" 		=> __('Please enter at least 2 characters and max 50 charactes', 'verysimple') ,
+		"error_form_subject" 		=> __('Please enter at least 2 characters and max 50 characters', 'verysimple') ,
+		"error_form_message" 		=> __('Please enter at least 10 characters and max 1000 characters', 'verysimple') ,
 		"error_form_sum" 		=> __("Please fill in the correct number", "verysimple"),
 		"error_email" 			=> __("Please enter a valid email", "verysimple"),
 		"success" 				=> __("Thanks for your message! I will contact you as soon as I can.", "verysimple"),
@@ -61,6 +62,17 @@ function vscf_shortcode($vscf_atts) {
 				$error_class[$required_field] = "error";
 				$error = true;
 				$result = $vscf_atts['error_empty'];
+			}
+			$form_data[$required_field] = $value;
+		}
+		foreach ($required_fields as $required_field) {
+			$value = $post_data[$required_field];
+		
+			// Displaying error message if validation failed for each input field
+		if (((($required_field == "form_name") || ($required_field == "form_subject")) && strlen($value)>50) || (($required_field == "form_message") && strlen($value)>1000)) {
+				$error_class[$required_field] = "error";
+				$error = true;
+				$result = $vscf_atts['error_toolong'];
 			}
 			$form_data[$required_field] = $value;
 		}
