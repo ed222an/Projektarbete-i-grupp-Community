@@ -119,7 +119,6 @@ get_header(); ?>
 								echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
 								$row->achievementCompleteDate . "</div>";
 								echo"</div>";
-											// data-text=' Completed achievement $row->achievement on $row->achievementCompleteDate'
 											//Add social media here
 											$url = currentPageURL();
 											if($user == $current_user->user_login){

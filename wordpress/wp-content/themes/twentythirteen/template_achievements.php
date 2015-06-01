@@ -36,10 +36,6 @@ get_header(); ?>
 					global $current_user;
 					global $wpdb;
 					get_currentuserinfo(); 
-				//echo "<form action='http://127.0.0.1/Projektarbeteigrupp/?page_id=76' method='POST'>";
-				//echo "<input type='text' id='searchUser' value='' />";
-				//echo "<input type='submit' value='Search user' />";
-				//echo "</form>";
 				
 				//Kod som hämtar ut ens egna achievements och om de är avklarade eller inte
 				$result = $wpdb->get_results( "SELECT * FROM wp_achievements WHERE username = '$current_user->user_login'");
@@ -54,7 +50,6 @@ get_header(); ?>
 				else{
 					$single = "'";
 					$double = '"';
-					//str_replace("world","Peter","Hello world!");
 		
 					//Visar update-knappen för admin
 						global $user_ID; 
