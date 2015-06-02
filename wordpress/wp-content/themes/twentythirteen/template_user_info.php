@@ -132,8 +132,7 @@ get_header(); ?>
 									echo "<div class='boxDone'>";
 									echo "<img src='".$descRow->imgpath ."' alt='test' height='100' width='100'>";
 									echo $row->achievementCompletedDate;
-									echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div> <div class='achiDate'>Completed: " . 
-									$row->achievementCompleteDate . "</div>";
+									echo "<div class='achiName'>" . $row->achievement . "</div> " . "<div class='achiDesc'>" . $descRow->description . "</div>" . "<div class='achiStatus'>Achivement status: " . $status . "</div>";
 									echo"</div>";
 								}
 								if($row->achievementIsDone == 0)
