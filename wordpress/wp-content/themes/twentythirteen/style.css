@@ -960,8 +960,9 @@ input[type="reset"] {
 	background-color:#9B6300;
 	color: #fff;
 	display: inline-block;
-	padding: 11px 24px 10px;
+	padding: 6px 21px 7px;
 	text-decoration: none;
+	border:0px;
 }
 
 button:hover,
