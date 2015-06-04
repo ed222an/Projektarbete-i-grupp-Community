@@ -76,8 +76,11 @@ get_header(); ?>
 								echo $statName . " ".$row->statCount . "<br>";
 								
 							 }
-							 
-							 foreach($KillsKDR as $row){
+							 if(empty($KillsKDR) || empty($DeathsKDR)){
+								 echo "KDR not available";
+							 }
+							 else{
+								foreach($KillsKDR as $row){
 								$kills = $row->statCount;
 								foreach($DeathsKDR as $row2){
 									$deaths = $row2->statCount;
@@ -86,8 +89,11 @@ get_header(); ?>
 								$KDR = $kills/$deaths;
 								
 								echo "Kill/Death ratio " . $KDR;
-								echo "</div>";
+								//echo "</div>";
+							 }
+
 							}
+							echo "</div>";
 							 
  
 						}else{
