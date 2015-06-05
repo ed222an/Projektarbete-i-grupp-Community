@@ -1,0 +1,1036 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+			"name": "Post new stats",
+			"description": "",
+			"order": [
+				"fa81ed43-89b4-a49e-15c6-ac5eca61ab19",
+				"a74b98ac-cfee-9644-626c-fbbf8125e128",
+				"46282088-3dbd-3e29-fc9a-b745e324a3e3",
+				"84b190f8-3f11-e730-87f9-c29852b81099",
+				"1e12f5e8-21f5-d8ed-0d2d-3304075845d9",
+				"12cba48b-bae5-19aa-b677-f8313d4015c8",
+				"4d2f11bc-1c04-2699-7373-1808a3331886",
+				"9875b02b-9e6b-8471-fa23-31799ccf088e",
+				"bcfa972e-bdc1-7885-5b5a-fdd422399053",
+				"bf14ba4c-0939-bfbf-a09b-995aacdb524a",
+				"95a58b4b-8565-15b8-c9c3-09c3bb4c4557",
+				"03d50e0d-98a4-7255-8884-e02c8076b460",
+				"3ded9fe7-f04b-ee37-a7bd-02bf9638dcd1",
+				"0711db09-95cf-3534-3d8f-9c15dff56436",
+				"fd2d3bef-6059-ccbb-34db-d06d6b609c97",
+				"17ac6221-36b1-010d-10a2-71e6d967b397",
+				"f009d3c2-4b65-3da8-82ee-673a5af115f4",
+				"f334edc5-4b8e-8c6e-800d-ba38774ab107",
+				"bd1d387a-d473-caf3-e0dc-fe5df7d22e36",
+				"bdadce6e-fb72-6fc6-7041-20aebda6ea51",
+				"71c08bf2-6d47-8502-d0ec-71ffef0c1e84",
+				"80f6af36-30ae-aef8-0bf4-0afb5d24e07d",
+				"02604fb1-a4b5-59b2-63cc-c255d9fa3ae2",
+				"c943da30-17fe-ff2b-6d13-565da7f81452",
+				"d0154f52-ba7b-d8ac-5535-5662018d505a",
+				"fc258a3f-e670-ca28-0c95-5da417ee7607",
+				"973704af-06cc-b4f2-edda-017352da3612"
+			],
+			"folders": [],
+			"timestamp": 1429193551673,
+			"synced": false,
+			"remote_id": 0,
+			"owner": 0,
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"public": false,
+			"write": true,
+			"requests": [
+				{
+					"id": "02604fb1-a4b5-59b2-63cc-c255d9fa3ae2",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/status.php",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "achievement",
+							"value": "10 Kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "achievementIsDone",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1429791186336,
+					"name": "TF 6.24 Post achievements - Changes the status on an achievement",
+					"description": "This changes the status on the specific achievement on a specific user and achievement to done. Check the database to make sure it works.",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"responses": []
+				},
+				{
+					"id": "03d50e0d-98a4-7255-8884-e02c8076b460",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admina<script>alert(\"Hello\")</script>",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.13 Post new stats - XSS non existing user",
+					"description": "Post new stats on a non existing user with XSS",
+					"descriptionFormat": "html",
+					"time": 1429356353176,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"id": "0711db09-95cf-3534-3d8f-9c15dff56436",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Password<script>alert(\"Hello\")</script>",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.15 Post new stats - XSS password",
+					"description": "Post new stats on an existing user with XSS. Only password. No sign of XSS should be present.",
+					"descriptionFormat": "html",
+					"time": 1429356505227,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "12cba48b-bae5-19aa-b677-f8313d4015c8",
+					"name": "TF 6.6 Post new stats SQL Injection - Stat name",
+					"description": "Post new stats to an existing user with sql code in stat name. A new row should be added in database that creates something new to count.",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills' or maps",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "17ac6221-36b1-010d-10a2-71e6d967b397",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://www.metalgenre.se/api/rest/info.php?username=Admina&statName=kills",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.17 GET stats - Get stats from a specific user",
+					"description": "Get stats from a specific user that do not exist. The json string should return a massage that the user do not exist.",
+					"descriptionFormat": "html",
+					"time": 1429356821526,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "1e12f5e8-21f5-d8ed-0d2d-3304075845d9",
+					"name": "TF 6.5 Post new stats SQL Injection - Username",
+					"description": "Post new stats to a non existing user(Admina) with sql code ' or Admin. User do not exist should be shown.",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admina' or Admin",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "3ded9fe7-f04b-ee37-a7bd-02bf9638dcd1",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin<script>alert(\"Hello\")</script>",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Password<script>alert(\"Hello\")</script>",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.14 Post new stats - XSS username and password",
+					"description": "Post new stats on an existing user with XSS. Both username and password",
+					"descriptionFormat": "html",
+					"time": 1429356442131,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "46282088-3dbd-3e29-fc9a-b745e324a3e3",
+					"name": "TF 6.3 Post new stats - Wrong username",
+					"description": "Post new stats on a non existing user with correct password",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admina",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "4d2f11bc-1c04-2699-7373-1808a3331886",
+					"name": "TF 6.7 Post new stats empty fields - No password",
+					"description": "Post new stats to an existing user with no password. Username or password is incorrect should be shown",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "71c08bf2-6d47-8502-d0ec-71ffef0c1e84",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/info.php?username=Admin&status=false",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.22 GET achievements - Get all achievements on a specific user that is not done",
+					"description": "Get all achievements that are not done from a user. This should return all achievements that is done and exists on a user. Check the database to make sure it works.",
+					"descriptionFormat": "html",
+					"time": 1429787517862,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"id": "80f6af36-30ae-aef8-0bf4-0afb5d24e07d",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/info.php?username=Admin&achievementName=10+Kills",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.23 GET achievements - Get specific achievement on a specific user",
+					"description": "Get all achievements that are not done from a user. This should return all achievements that is done and exists on a user. Check the database to make sure it works.",
+					"descriptionFormat": "html",
+					"time": 1429787663240,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "84b190f8-3f11-e730-87f9-c29852b81099",
+					"name": "TF 6.4 Post new stats - Wrpng user and password",
+					"description": "Post new stats on a non existing user with wrong password",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admina",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Passwords",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "95a58b4b-8565-15b8-c9c3-09c3bb4c4557",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin<script>alert(\"Hello\")</script>",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.12 Post new stats - XSS",
+					"description": "Post new stats on an existing user with XSS",
+					"descriptionFormat": "html",
+					"time": 1429356320232,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"id": "973704af-06cc-b4f2-edda-017352da3612",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "achievement",
+							"value": "10 Kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "achievementIsDone",
+							"value": "5",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.28 Post achievements - Changes status on achievement",
+					"description": "Changes status on an achievement. A higher number that is not allowed is supplied. An error should be returned",
+					"descriptionFormat": "html",
+					"time": 1429791507274,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "9875b02b-9e6b-8471-fa23-31799ccf088e",
+					"name": "TF 6.8 Post new stats empty fields - Empty username and existing password",
+					"description": "Post new stats to an empty username and an existing password. User ID not defined should be shown",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "a74b98ac-cfee-9644-626c-fbbf8125e128",
+					"name": "TF 6.2 Post new stats - Wrong password",
+					"description": "Post new stats on an existing user with wrong password",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Passwords",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"version": 2,
+					"time": 1429193667676,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "bcfa972e-bdc1-7885-5b5a-fdd422399053",
+					"name": "TF 6.9 Post new stats empty fields - All empty",
+					"description": "Everything empty. A message that says username or userID is missing should be shown",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "bd1d387a-d473-caf3-e0dc-fe5df7d22e36",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/info.php?username=Admin",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.20 GET stats - Get all achievements on a specific user",
+					"description": "Get all achievements from a user. This should return alla achievements that exists on a user. Check the database to make sure it works.",
+					"descriptionFormat": "html",
+					"time": 1429787345670,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"id": "bdadce6e-fb72-6fc6-7041-20aebda6ea51",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/info.php?username=Admin&status=true",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1429787496841,
+					"name": "TF 6.21 GET achievements - Get all achievements on a specific user that is done",
+					"description": "Get all achievements that are done from a user. This should return all achievements that is done and exists on a user. Check the database to make sure it works.",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"responses": []
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "bf14ba4c-0939-bfbf-a09b-995aacdb524a",
+					"name": "TF 6.10 Post new stats  - Post stats to a user with no row in database",
+					"description": "An existing user with no row in database. A new row should be automatically added to the database which count kills",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin2",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "c943da30-17fe-ff2b-6d13-565da7f81452",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/status.php",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "achievement",
+							"value": "10 Kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "achievementIsDone",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1429791181153,
+					"name": "TF 6.25 Post achievements - Changes the status on an achievement",
+					"description": "This changes the status on the specific achievement on a specific user and achievement to in progress. Check the database to make sure it works.",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"responses": []
+				},
+				{
+					"id": "d0154f52-ba7b-d8ac-5535-5662018d505a",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "achievement",
+							"value": "1000 Kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "achievementIsDone",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.26 Post achievements - Lägger till ett nytt achievement på användaren",
+					"description": "Lägger till ett nytt achievement på användaren om det medskickade inte finns på användaren. Kolla i databasen så att det stämmer",
+					"descriptionFormat": "html",
+					"time": 1429791271608,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"id": "f009d3c2-4b65-3da8-82ee-673a5af115f4",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://www.metalgenre.se/api/rest/info.php?username=Admin' or Admina&statName=kills",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.18 GET stats - Get stats from a specific user with SQL injection",
+					"description": "Get stats from a specific user by adding sql code to the end of the username",
+					"descriptionFormat": "html",
+					"time": 1429356889011,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"id": "f334edc5-4b8e-8c6e-800d-ba38774ab107",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://www.metalgenre.se/api/rest/info.php?username=Admin&statName=kills' or deaths",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.19 GET stats - Get stats from user woth SQL",
+					"description": "Get stats from user by using sql code in the statName field",
+					"descriptionFormat": "html",
+					"time": 1429356957232,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				},
+				{
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"id": "fa81ed43-89b4-a49e-15c6-ac5eca61ab19",
+					"name": "TF 6.1 Post new stats - Existing user",
+					"description": "Post new stats on an existing user",
+					"url": "http://127.0.0.1/rest/rest/status.php",
+					"method": "POST",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"data": [
+						{
+							"key": "statName",
+							"value": "kills",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "statCount",
+							"value": "5001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": "",
+					"synced": false
+				},
+				{
+					"id": "fc258a3f-e670-ca28-0c95-5da417ee7607",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://127.0.0.1/achievements/status.php",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [
+						{
+							"key": "achievement",
+							"value": "10 Kills",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "username",
+							"value": "Admin'",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "achievementIsDone",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "TF 6.27 Post achievements - Lägger till ett nytt achievement på användaren",
+					"description": "Change status on achivement. Username sql code. User does not exist should be returned",
+					"descriptionFormat": "html",
+					"time": 1429791369268,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0
+				},
+				{
+					"id": "fd2d3bef-6059-ccbb-34db-d06d6b609c97",
+					"headers": "Authorization: Basic QWRtaW46UGFzc3dvcmQ=\n",
+					"url": "http://www.metalgenre.se/api/rest/info.php?username=Admin&statName=kills",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "926b5b0c-8f70-5b2c-5c5e-7d79196736c7",
+					"data": [],
+					"dataMode": "params",
+					"name": "TF 6.16 GET stats - Get stats from a specific user",
+					"description": "Gets the stats from a specific user. Compare the database valus to the json string, if they match the test have passed.",
+					"descriptionFormat": "html",
+					"time": 1429356729077,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"collectionOwner": 0,
+					"synced": false,
+					"owner": 0
+				}
+			]
+		}
+	],
+	"environments": [],
+	"headerPresets": [],
+	"globals": []
+}
